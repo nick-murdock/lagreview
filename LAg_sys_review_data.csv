@@ -1,0 +1,452 @@
+num,covidance_num,title,author_last_name,author_first_name,journal,year,study_purpose,eval_field,pop_descript,cohort_descript,sample_type,subtype_1,subtype_2,subtype_3,subtype_4,subtype_5,assay_manufact,manuf_protocol_mdri,manuf_protocol_frr,mdri_1,mdri_1_5,mdri_2,mdri_other,frr_1,frr_1_5,frr_2,frr_other,mdri_1_vl_1000,mdri_1_5_vl_1000,mdri_2_vl_1000,mdri_vl_other,frr_1_vl_1000,frr_1_5_vl_1000,frr_2_vl_1000,frr_vl_other,mdri_algorithm_other,frr_algorithm_other,outcome_measure,reported_measure,unknown,northern_africa,sub_saharan_africa,latin_america_caribbean,northern_america,central_asia,eastern_asia,south_eastern_asia,southern_asia,western_asia,eastern_europe,northern_europe,southern_europe,western_europe,australia_new_zealand,melanesia,micronesia,polynesia
+1,910,The Impact of HIV Subtype on Specificity of Cross-sectional HIV Incidence Assays in Rakai Uganda,Longosz,Andrew,CROI,2014,Comparison of recency assays/algorithms; FRR,Evaluation,Treatment naive HIV-infected individuals,Rakai Community Cohort Study (RCCS),Other: Not defined,A,D,,,,Other: Not defined,,,,,,,,Yes,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+2,908,Performance of the Limiting Antigen-Avidity EIA for Use With Dried Blood Spot Specimens,Rottinghaus,Erin,CROI,2014,Comparison of sample types,Evaluation,"Industry-sold plasma units;
+HIV-infected individuals",,Matched plasma/serum and dried blood spot,Not defined,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,,,,,Yes,,,,,,,,,,,,,
+3,819,"False Recent Rates for Two Recent Infection Testing Algorithms, South Nyanza, Kenya",Zeh,Clement,CROI,2015,"Comparison of recency assays/algorithms;
+FRR",Evaluation,General population,Ndhiwa population-based survey,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Proportion chronic,Percentage,,,Yes,,,,,,,,,,,,,,,
+4,818,"Estimation of HIV Incidence in a High-HIV-Prevalence Setting, South Nyanza, Kenya, 2012",Kim,Andrea,CROI,2015,"Comparison of recency assays/algorithms;
+HIV incidence",Field Use,General population,Ndhiwa population survey,Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+5,816,"The Effect of HIV-1 Subtype A, C and D on Cross-Sectional Incidence Assay Performance",Quinn,Thomas,CROI,2015,Comparison of recency assays/algorithms,Evaluation,HIV-infected individuals,"Rakai Community Cohort Study (RCCS);
+Ugandan and Zimbabwean Genital Shedding (GS) Study;
+HPTN 039;
+Partners in Prevention Study;
+CAPRISA 004 Trial Group",Plasma/serum only,A,C,D,,,Other: Not defined,,,,Yes,,,,Yes,,,,,,,,,,Yes,,,,,,,Yes,,,,,,,,,,,,,,,
+6,806,Variability in HIV Prevalence and Incidence among First-time Blood Donors in Brazil Before and After Introduction of NAT,Sabino,Ester,AABB,2015,"HIV incidence;
+HIV prevalence",Field Use,Blood donors,"REDS-II;
+REDS-III",Other: Not defined,Not defined,,,,,Other: Not defined,Yes,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence;
+Proportion recent","100000 donations (prevalence);
+100000 PY (incidence);
+Percentage (proportion recent)",,,,Yes,,,,,,,,,,,,,,
+7,773,Cross-Sectional HIV Incidence at Scale-up of ART in 24 Rural Communities in Botswana,Moyo,Sikhulile,CROI,2016,HIV incidence,Field Use,General population,Botswana Combination Prevention Project (BCPP),Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+8,772,Weak HIV Antibody Responses in Perinatally Infected Young Adults,Kirkpatrick,Allison,CROI,2016,Effect of age during infection on recency assay,Evaluation,"Young adults with perinatally-acquired HIV infection;
+Elite controllers;
+HIV-infected adults on ART",,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,Yes,,,,,,,,,,,,,
+9,767,Comparison of Methods for HIV Incidence Estimation in a Cohort with Subtype-C HIV Infection ,Kirkpatrick,Allison,CROI,2016,"HIV incidence;
+Comparison of recency assays/algorithms",Evaluation,HIV-infected individuals,Hormonal Contraception and HIV trial,Other: Not defined,C,,,,,Sedia,,,,Yes,,,,Yes,,,,Yes,,,,Yes,,,Yes,Yes,,,,,Yes,,,,,,,,,,,,,,,
+10,764,Extending HIV Avidity Recency Detection by Addition of p24 Ag Detection,Murphy,Gary,CROI,2016,Comparison of recency assays/algorithms,Evaluation,"Individuals with long-standing HIV infection;
+Individuals with recent HIV infection",,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,Yes,,,,,,,,,,,,,,,,,
+11,753,"Strengthening HIV surveillance in the antiretroviral therapy era: baseline findings of HIV prevalence and incidence from KwaZulu-Natal, South Africa",Kharsany,Ayesha,IAS,2016,"HIV prevalence;
+HIV incidence",Field Use,General population,Umgungundlovu population survey,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,"Prevalence;
+Incidence","Percentage (prevalence);
+100 PY (incidence)",,,Yes,,,,,,,,,,,,,,,
+12,743,HIV incidence assays: Evaluation of three HIV Avidity enzyme immunoassays,Hassan,Jaythoon,ESCV,2016,Comparison of recency assays/algorithms,Evaluation,,CEPHIA,Other: Not defined,B,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Sensitivity/Specificity,Percentage,Yes,,,,,,,,,,,,,,,,,
+13,742,Newly diagnosed HIV-1 cases: Decreased proportion of recent infections based on a multi-assay algorithm combining two serological assays,Hassan,Jaythoon,ESCV,2016,"Identification of recent infection;
+Comparison of recency assays/algorithms",Evaluation,Individuals with new HIV diagnosis,,Other: Not defined,B,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,,,,,,,,Yes,,,,,,
+14,741,Patterns in HIV Incidence in Repeat and First-Time and Donors in in Brazil ,Custer,Brian,Vox Sanguinis,2016,HIV incidence,Field Use,Blood donors,,Other: Not defined,Not defined,,,,,Other: Not defined,Yes,,,,,,,,,,,,,,,,,,,,HIV incidence,100000 PY,,,,Yes,,,,,,,,,,,,,,
+15,706,Host Transcriptomic Determinants of HIV Persistence in vivo,Abdel-Mohsen,Mohamed,CROI,2017,Identification of HIV persistence determinants,Field Use,"HIV-infected individuals on delayed ART;
+HIV-infected individuals on early ART",,Plasma/serum only,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,,,
+16,701,Validation of Limiting Antigen Avidity Assay to Estimate HIV Incidence in East Africa,Laeyendecker,Oliver,CROI,2017,Comparison of HIV incidence models,Evaluation,,Rakai Community Cohort,Other: Not defined,A & D,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,Yes,,,,,HIV incidence,100 PY,,,Yes,,,,,,,,,,,,,,,
+17,697,"Assessing Utility of HIV Incidence Assays in Estimating
+Individual Infection Times",Pilcher,Christopher,CROI,2017,"Infection time;
+Comparison of recency assays/algorithms",Evaluation,Treatment naive HIV-infected individuals,CEPHIA,Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,,,
+18,695,Identifying Recent HIV Infections: An Individualized Assessment of Risk,Hassan,Jaythoon,CROI,2017,"Predicting risk of recent infection;
+Comparison of recency assays/algorithms",Evaluation,Individuals with new HIV diagnosis,CEPHIA,Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion Recent;
+Risk;
+Sensitivity/Specificity",Percentage,,,,,,,,,,,,Yes,,,,,,
+19,684,The National Blood Service as a Platform for HIV Cure Research: A Preliminary Report from the Monitoring and Acute Treatment of HIV Study (MATHS),Van Den Berg,Karin,ISBT,2017,"Impact of ART on disease progression;
+Cascade of care/Program effectiveness",Field Use,Blood donors,Monitoring and Acute Treatment of HIV Study (MATHS),Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+20,669,Proportion of HIV Seropositive Donors with Recently-Acquired Infection in the USA,Custer,Brian,AABB,2017,"Identification of recent infections;
+Recent infection characteristics",Field Use,Blood donors,,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion Recent,Percentage,,,,,Yes,,,,,,,,,,,,,
+21,651,"Limited Awareness of PrEP Among People Who Inject Drugs in Athens, Greece",Giallouros,George,HIVR4P,2018,Assess PrEP awareness,Field Use,PWID,Transmission Reduction Intervention Project (TRIP),Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,
+22,637,Transmitted drug resistance trends in individuals with recent infection in the Mesoamerican Region,Tapia-Trejo,D,HIV & Hepatitis in the Americas,2018,Drug resistance,Field Use,Treatment naive HIV-infected individuals,,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,Yes,,,,,,,,,,,,,,
+23,630,HIV-seroconversion dynamics after allogenic stem cell transplantation,Salgado,Maria,CROI,2018,Quantify/characterize HIV antibody profile,Field Use,Treated HIV-infected allogenic stem cell transplant patients,IciStem Consortium,Plasma/serum only,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,,,
+24,628,Association of Mobility with HIV Recent Infection and Viremia in Botswana,Mmalane,Mompati,CROI,2018,Association of mobility with recent infections and viremia,Field Use,General population,Botswana Combination Prevention Project (BCPP),Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+25,626,High Prevalence of Concurrent Sexual Partnerships in a Large Population Survey,Kadima,Etienne,CROI,2018,Association of MCP and recent infection,Field Use,General population,Botswana Combination Prevention Project (BCPP),Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+26,616,Use of a Limiting Antigen Avidity Assay to Determine HIV Incidence in South African First-Time Blood Donors,Vermeulen,Marion,ISBT,2018,"Identification of recent infections;
+HIV incidence",Field Use,Blood donors,,Plasma/serum only,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,HIV incidence,1000 PY,,,Yes,,,,,,,,,,,,,,,
+27,598,"Characteristics of HIV Infections, Including Genotypes and Drug Resistance Mutations, in Blood Donors in the US",Custer,Brian,AABB,2018,"HIV infection characteristics;
+Drug resistance;
+Genotyping",Field Use,Blood donors,,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion Recent;
+Proportion Resistance",Percentage,,,,,Yes,,,,,,,,,,,,,
+28,586,Impact of HIV-1 Subtype and Sex on Sedia Limiting Antigen Avidity Assay Performance,Grebe,Eduard,CROI,2019,"Comparison of recency assays/algorithms;
+MDRI;
+FRR;
+HIV infection characteristics",Evaluation,"Men;
+Non-pregnant women;
+Pregnant women","JHU/NIAID;
+CEPHIA",Other: Not defined,A,B,C,D,,Sedia,,,,Yes,Yes,,,Yes,Yes,,,Yes,Yes,,,Yes,Yes,,,,,,Yes,,,,,,,,,,,,,,,,,
+29,584,"Low Cross-Sectional HIV-1 Incidence at end of Botswana ""Ya Tsie"" Prevention Study",Moyo,Sikhulile,CROI,2019,HIV incidence,Field Use,General population,Community-wide End-of Study Survey (ESS) of the Botswana Combination Prevention Project (BCPP),Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+30,582,Community prevalence of viremia: a new standard for bio-behavioral surveys,Solomon,Sunil,CROI,2019,Association of prevalence of HIV viremia and HIV incidence,Field Use,"MSM;
+PWID",,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,
+31,581,Recent HIV infection surveillance among adolescent girls and young women in Malawi,Payne,Danielle,CROI,2019,"HIV incidence;
+Identification of recent infections",Field Use,AGYW seeking antenatal care,,Other: Not defined,Not defined,,,,,Other: Sedia or Maxim,Yes,Yes,,,,,,,,,,,,,,,,,,,"Proportion recent;
+HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+32,565,HIV transmission patterns study by using genotyping fingerprinting method among the High Risk Groups of North-West India,Chauhan,Chandar,Indian Virological Society,2019,Transmission patterns,Field Use,"FSW;
+MSM;
+PWID",,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,
+33,552,Risk Factors for Recently Acquired HIV Infection in Blood Donors in South Africa,van den Berg,Karin,ISBT,2019,Recent infection characteristics,Field Use,Blood donors,,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+34,550,HIV prevalence and incidence estimates among blood donors in five regions in China,Shi,L,ISBT,2019,"HIV prevalence;
+HIV incidence",Field Use,Blood donors,"Recipient Epidemiology and Donor Evaluation
+Study-III (REDS–III) China",Other: Not defined,Not defined,,,,,Other: Not defined,Yes,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence","100000 donors (prevalence);
+100000 PY (incidence)",,,,,,,Yes,,,,,,,,,,,
+35,529,Estimating Incidence at a Regional Level with the CD4 Depletion Model,Mehta,Sanjay,CROI,2020,Comparison of HIV incidence models,Evaluation,,San Diego Primary Infection Resource Consortium algorithm,Other: Not defined,Not defined,,,,,Other: Not defined,,Yes,,,,,,,,,,,,,,,,,,,Sensitivity/Specificity,Percentage,,,,,Yes,,,,,,,,,,,,,
+36,528,The CD4 Depletion Model Does Not Differentiate Incident from Chronic Infection,Tang,Michael,CROI,2020,Comparison of HIV incidence models,Evaluation,HIV-infected individuals,San Diego Primary Infection Resource Consortium (PIRC),Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,,,,,Yes,,,,,,,,,,,,,
+37,526,No HIV Incidence Increase in First-Time Blood Donors with 12-Month Deferral for MSM,Grebe,Eduard,CROI,2020,HIV incidence,Field Use,Blood donors,,Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,100000 PY,,,,,Yes,,,,,,,,,,,,,
+38,523,Impact of Food Insecurity on the HIV Epidemic in Sub-Saharan Africa (2015-2017,Low,Andrea,CROI,2020,Association of food insecurity and HIV-related outcomes,Field Use,General population,Zambia PHIA; Eswatini PHIA; Lesotho PHIA; Uganda PHIA; Tanzania PHIA; Namibia PHIA,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+39,522,Rapid ART in Blood Donors with Acute and Recent HIV Clade C Infection in South Africa,Van Den Berg,Karin,CROI,2020,Correlation of early ART initiation and HIV reservoir size,Field Use,Blood donors,Recipient Epidemiology and Donor Evaluation Study-III (REDS-III),Other: Not defined,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+40,520,"Mobility, New HIV Infections, and Progress Toward the 90-90-90 Targets in Namibia",Low,Andrea,CROI,2020,Transmission patterns,Field Use,General population,Namibia PHIA,Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+41,519,Evaluation of Cross-Sectional Incidence Testing in the HPTN 071 (PopART) Trial,Klock,Ethan,CROI,2020,"Comparison of recency assays/algorithms;
+Comparison of HIV incidence models",Evaluation,General population,"HPTN 071; 
+PopART",Other: Not defined,C,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+42,502,Can HIV recent infection surveillance help us better understand where primary prevention efforts should be targeted? Results of three pilots integrating a recent infection testing algorithm into routine programme activities in Kenya and Zimbabwe,Rice,Brian,Journal of the International AIDS Society,2020,Implementation of RITA,Field Use,"Pregnant women seeking antenatal care;
+HIV testing and counseling facility clients;
+FSW",,Plasma/serum and/or dried blood spot,Not defined,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,Yes,,,,,,,,,,,,,,,
+43,470,Impact of Early Viral Suppression on HIV Incidence Assays: HPTN 071 (PopART),Grant-McAuley,Wendy,CROI,2021,"Effects of ART on recency assay;
+Comparison of recency assays/algorithms",Evaluation,General Population,HPTN 071/PopART,Plasma/serum only,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Proportion Recent,Percentage,,,Yes,,,,,,,,,,,,,,,
+44,469,Comparison of Asante and Swift HIV Rapid Recency of Infection Assays,Schmidt,Haley,CROI,2021,Comparison of recency assays/algorithms,Evaluation,"HIV-infected individuals;
+Individuals with long-standing HIV infection",,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Concordance;
+Proportion recent",Percentage,,,Yes,,,,,,,,,,,,,,,
+45,468,Evaluation of a Rapid Test Algorithm to Estimate HIV Incidence: HPTN 071/PopART,Klock,Ethan,CROI,2021,"Comparison of recency assays/algorithms;
+HIV incidence",Evaluation,General population,HPTN 071/PopART,Other: Not defined,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+46,467,Use of Multi-Assay Algorithms to Identify Recent HIV Infections: HPRN 071/PopART,Grant-McAuley,Wendy,CROI,2021,Comparison of recency assays/algorithms,Evaluation,General population,HPTN 071/PopART,Plasma/serum only,Not defined,,,,,Other: Not defined,Yes,,,,,,,,,,,,,,,,,Yes,,Yes,"Sensitivity/Specificity;
+Proportion Recent",Percentage,,,Yes,,,,,,,,,,,,,,,
+47,442,"Recent infections among newly diagnosed cases of HIV infection in Spain, 2015-2016. National estimates using cohort data",Hernando,Victoria,Infectious Diseases,2021,"HIV prevalence of recent infection;
+Recent infection characteristics",Field Use,Treatment naive HIV-infected individuals,AIDS Research Network cohort (CoRIS),Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+Proportion recent",Percentage,,,,,,,,,,,,,Yes,,,,,
+48,431,"Short Communication: Low False Recent Rate of Limiting-Antigen Avidity Assay Among Long-Term Infected Subjects from Guangxi, China",Yu,Li,AIDS Research and Human Retroviruses,2015,"FRR;
+Factors associated with misclassification",Evaluation,Treatment naive chronically infected individuals,,Other: Not defined,Multiple,,,,,Maxim,,,,,,,,Yes,,Yes,,,,,,Yes,,Yes,,Yes,,,,,,,,,Yes,,,,,,,,,,,
+49,418,"HIV Incidence by Male Circumcision Status From the Population-Based HIV Impact Assessments Surveys--Eight Sub-Saharan African Countries, 2015-2017",Hines,Jonas,JAIDS,2021,"Male HIV incidence;
+Impact of VMMC program",Field Use,General population (male),"Eswatini PHIA;
+Lesotho PHIA;
+Malawi PHIA;
+Namibia PHIA;
+Tanzania PHIA;
+Uganda PHIA;
+Zambia PHIA;
+Zimbabwe PHIA",Dried blood spot only,A,A & D,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV incidence;
+HIV prevalence",Percentage,,,Yes,,,,,,,,,,,,,,,
+50,414,"Population Viral Load, Viremia and Recent HIV-1 Infections: Findings from Population-based
+HIV Impact Assessments (PHIAs) in Zimbabwe, Malawi, and Zambia",Farahani,Mansoor,JAIDS,2021,Association of population viral load and viral load suppression and probability of recent infection,Field Use,General Population,"Zimbabwe PHIA;
+Malawi PHIA;
+Zambia PHIA",Other: Not defined,,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+51,412,HIV-1 Recent Infection Testing Algorithm With Antiretroviral Drug Detection to Improve Accuracy of Incidence Estimates,Voetsch,Andrew,JAIDS,2021,Comparison of recency assays/algorithms,Evaluation,General population,"Cameroon PHIA;
+Côte d’Ivoire PHIA;
+Eswatini PHIA;
+Ethiopia PHIA;
+Kenya PHIA;
+Lesotho PHIA;
+Malawi PHIA;
+Namibia PHIA;
+Rwanda PHIA;
+Tanzania PHIA;
+Uganda PHIA;
+Zambia PHIA;
+Zimbabwe PHIA",Plasma/serum and/or dried blood spot,Multiple,A & D,,,,Other: Sedia (serum/plasma) and Maxim (DBS),Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV incidence;
+Proportion recent",Percentage,,,Yes,,,,,,,,,,,,,,,
+52,409,A Comparison of South African National HIV Incidence Estimates: A Critical Appraisal of Different Methods,Rehle,Thomas,PLOS One,2015,"Comparison of HIV incidence models;
+Comparison of recency assays/algorithms;
+Effects of ART on recency assay",Evaluation,General population,,Other: Not defined,C,,,,,Maxim,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+53,408,Comparison of Antibody Responses to HIV Infection in Ugandan Women Infected with HIV Subtypes A and D,Longosz,Andrew,AIDS Research and Human Retroviruses,2015,Quantify/characterize HIV antibody profile,Evaluation,HIV-infected women,Genital Shedding (GS) Study,Other: Not defined,A,D,,,,Sedia,,,,Yes,,,,Yes,,,,,,Yes,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+54,404,"Prevalence of Transmitted Drug-Resistance Mutations and Polymorphisms in HIV-1 Reverse Transcriptase, Protease, and gp41 Sequences Among Recent Seroconverters in Southern Poland",Smolen-Dzirba,Joanna,Medical Science Monitor,2017,"Drug resistance;
+Transmission patterns",Field Use,Individuals with new HIV diagnosis,,Other: Not defined,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+Transmitted drug resistance prevalence",Percentage,,,,,,,,,,,Yes,,,,,,,
+55,401,Integration of a recent infection testing algorithm into HIV surveillance in Ireland: improving HIV knowledge to target prevention,Robinson,E,Epidemiology and Infection,2019,"Implementation of RITA;
+Identification of recent infection;
+Recent infection characteristics",Field Use,Individuals with new HIV diagnosis,,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,,,,,,,,Yes,,,,,,
+56,399,Identifying Risk Factors for Recent HIV Infection in Kenya Using a Recent Infection Testing Algorithm: Results from a Nationally Representative Population-Based Survey,Kim,Andrea,PLOS One,2016,Recent infection characteristics,Field Use,General population,Kenya AIDS Indicator Survey,Plasma/serum only,Multiple,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,Yes,,,,,,,,,,,,,,,
+57,398,"HIV Incidence Estimates Using the LimitingAntigen Avidity EIA Assay at Testing Sites in Kiev City, Ukraine: 2013-2014",Simmons,Ruth,PLOS One,2016,"HIV incidence;
+Recent infection characteristics",Field Use,Individuals presented or referred for HIV testing,CASCADE,Plasma/serum only,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+HIV incidence","Percentage (proportion recent);
+100000 population",,,,,,,,,,,Yes,,,,,,,
+58,389,"Evidence of an untamed HIV epidemic among MSM and TGW in Rio de Janeiro, Brazil: a 2018 to 2020 cross-sectional study using recent infection testing",Teixeira,Sylvia,Journal of the International AIDS Society,2021,HIV incidence,Field Use,"MSM;
+TGW",,Plasma/serum only,Not defined,,,,,Maxim,Yes,Yes,,,,,,,,,,,,,,,,,,Yes,HIV incidence,Percentage,,,,Yes,,,,,,,,,,,,,,
+59,373,Short Communication: Low False Recent Rate of Limiting Antigen-Avidity Assay Combined with HIV-1 RNA Data in Botswana,Moyo,Sikhulile,AIDS Research and Human Retroviruses,2017,"FRR;
+Comparison of recency assays/algorithms",Evaluation,Treatment naive HIV-infected individuals,"Dikotlana cohort;
+Botsogo cohort",Other: Not defined,C,,,,,Other: Not defined,,,,,,,,Yes,,,,,,,,Yes,,,,,,,,,Yes,,,,,,,,,,,,,,,
+60,365,HIV incidence in the Estonian population in 2013 determined using the HIV-1 limiting antigen avidity assay,Soodla,P,HIV Medicine,2018,"HIV incidence;
+HIV infection characteristics",Field Use,Individuals with new HIV diagnosis,CASCADE,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+HIV incidence",Percentage,,,,,,,,,,,,Yes,,,,,,
+61,364,Extensive Genetic Diversity of HIV-1 in Incident and Prevalent Infections among Malaysian Blood Donors: Multiple Introductions of HIV-1 Genotypes from Highly Prevalent Countries,Chow,Wei Zhen,PLOS One,2016,Genotyping,Field Use,Blood donors,,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion Recent,Percentage,,,,,,,,Yes,,,,,,,,,,
+62,360,Closer to 90-90-90. The cascade of care after 10 years of ART scale-up in rural Malawi: a population study,Maman,David,Journal of the International AIDS Society,2016,"Cascade of care/Program effectiveness;
+HIV incidence",Field Use,General population,Chiradzulu HIV Impact in Population Survey,Plasma/serum only,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence","Percentage (prevalence);
+100 PY (incidence)",,,Yes,,,,,,,,,,,,,,,
+63,357,Surveillance of HIV-1 pol transmitted drug resistance in acutely and recently infected antiretroviral drug-naïve persons in rural western Kenya,Onywera,Harris,PLOS One,2017,"Drug resistance;
+Transmission patterns",Field Use,General population,Ndhiwa HIV Impact in Population Survey(NHIPS),Other: Not defined,Multiple,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Transmitted drug resistance prevalence,Percentage,,,Yes,,,,,,,,,,,,,,,
+64,356,Incorrect Identification of Recent HIV Infection in Adults in the United States Using a Limiting-Antigen Avidity Assay,Longosz,Andrew,AIDS,2014,"FRR;
+Factors associated with misclassification",Evaluation,"MSM;
+PWID","Multicenter AIDS Cohort Study (MACS) ;
+AIDS Linked to the IntraVenousExperience (ALIVE) cohort",Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,Yes,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,
+65,354,Primary HIV Drug Resistance among Recently Infected Cases of HIV in North-West India,Chauhan,Chandar,AIDS Research and Treatment,2019,Drug resistance,Field Use,FSW; MSM; PWID,,Plasma/serum only,C,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Proportion Resistance,Percentage,,,,,,,,,Yes,,,,,,,,,
+66,348,Recalibration of the Limiting Antigen Avidity EIA to Determine Mean Duration of Recent Infection in Divergent HIV-1 Subtypes,Duong,Yen,PLOS One,2015,"MDRI; 
+FRR; 
+Comparison of recency assays/algorithms;",Evaluation,"Treatment naive HIV-infected individuals;
+Individuals with AIDS","Thailand BMA IDU;
+Amsterdam;
+Trinidad;
+Ethiopia;
+China;
+Kenya CSW;
+Vietnam;
+Ghana;
+Cote d'Ivoire
+HERS",Other: Not defined,Multiple,B,AE,C/BC,A & D,Sedia,,,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,,,,,,,,,,,,,,,Yes,Yes,,,Yes,Yes,,,,,,Yes,,,,
+67,346,"Recent HIV infection among pregnant women in the 2017 antenatal sentinel cross-sectional survey, South Africa: Assay-based incidence measurement",Woldesenbet,Selamawit,PLOS One,2021,HIV incidence,Field Use,Pregnant women,South African Antenatal Sentinel HIV Survey,Plasma/serum only,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"Proportion recent;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+68,343,"Estimating HIV incidence in the Akwa Ibom AIDS indicator survey (AKAIS), Nigeria using the limiting antigen avidity recency assay",Negedu-Momoh,Olubunmi,Journal of the International AIDS Society,2021,HIV incidence,Field Use,General population,Akwa Ibomstate cross-sectional population-based survey (AKAIS),Plasma/serum only,,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence","Percentage (prevalence);
+100 PY (incidence)",,,Yes,,,,,,,,,,,,,,,
+69,329,Undisclosed HIV status and antiretroviral therapy use among South African blood donors,van den Berg,Karin,Transfusion,2021,Undisclosed ARV prevalence,Field Use,Blood donors,,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Undisclosed ARV prevalence;
+Proportion recent",Percentage,,,Yes,,,,,,,,,,,,,,,
+70,327,"Population-level HIV incidence estimates using a combination of synthetic cohort and recency biomarker approaches in KwaZulu-Natal, South Africa",Grebe,Eduard,PLOS One,2018,Comparison of HIV incidence models,Evaluation,General population,"Mbongolwane HIV Impact in Population Survey;
+Eshowe HIV Impact in Population Survey",Other: Not defined,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,100 PY,,,Yes,,,,,,,,,,,,,,,
+71,326,"A comparison of self-report and antiretroviral detection to inform estimates of antiretroviral therapy coverage, viral load suppression, and HIV incidence in Kwazulu-Natal, South Africa",Huerga,Helena,BMC Infectious Diseases,2017,"Comparison of HIV incidence models;
+Effects of ART on HIV incidence estimation",Evaluation,General population,"Mbongolwane population HIV survey;
+Eshowe population HIV survey",Plasma/serum only,C,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,100 PY,,,Yes,,,,,,,,,,,,,,,
+72,323,Short Communication: Dried Blood Spots Stored at Room Temperature Should Not Be Used for HIV Incidence Testing,Eisenberg,Anna,AIDS Research and Human Retroviruses,2018,"Comparison of sample types;
+Comparison of sample storage conditions",Evaluation,Young women,"HPTN 068;
+CEPHIA",Matched plasma/serum and dried blood spot,,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,,,Yes,Yes,Yes,,,,,,,,,,,,,
+73,322,Short Communication: Heightened HIV Antibody Responses in Postpartum Women as Exemplified by Recent Infection Assays: Implications for Incidence Estimates,Hargrove,John,AIDS Research and Human Retroviruses,2017,MDRI,Evaluation,Postpartum women,Zimbabwe Vitamin A for Mothers and Babies (ZVITAMBO) trial,Other: Not defined,C,,,,,Other: Not defined,,,,Yes,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+74,319,Evaluation of the limiting antigen avidity EIA (LAg) in people who inject drugs in Greece,Nikolopoulus,G.K.,Epidemiology and Infection,2017,"Comparison of HIV incidence models;
+FRR",Evaluation,PWID,"ARISTOTLE;
+TRIP",Other: Not defined,Multiple,,,,,Sedia,Yes,,,,,,,Yes,,,,,,,,,,,,Yes,"Proportion recent;
+HIV prevalence;
+HIV incidence",Percentage,,,,,,,,,,,,,Yes,,,,,
+75,315,Short Communication: False Recent Ratio of the Limiting-Antigen Avidity Assay and Viral Load Testing Algorithm Among Cameroonians with Long-Term HIV Infection,Lynch,Briana,AIDS Research and Human Retroviruses,2017,FRR,Evaluation,HIV-infected individuals,Medical Diagnostic Center (MDC) cohort,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,Yes,,,,,,,,,Yes,,,,,,,,,,,,,,,
+76,313,Molecular Epidemiology of HIV-1 Infection among Men who Have Sex with Men in Taiwan in 2012,Huang,Szu-Wei,PLOS One,2015,Molecular epi,Field Use,MSM,,Other: Not defined,Multiple,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence","Percentage (prevalence);
+100 PY (incidence)",,,,,,,Yes,,,,,,,,,,,
+77,309,Short Communication: Assessing Estimates of HIV Incidence with a Recent Infection Testing Algorithm That Includes Viral Load Testing and Exposure to Antiretroviral Therapy,Kim,Andrea,AIDS Research and Human Retroviruses,2018,"HIV incidence;
+Comparison of recency assays/algorithms",Evaluation,General population,"South African National HIV Prevalence, Incidence, and Behaviour Survey;
+Kenya AIDS Indicator Survey",Dried blood spot only,Not defined,,,,,Maxim,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+78,304,Short Communication: Comparison of Maxim and Sedia Limiting Antigen Assay Performance for Measuring HIV Incidence,Schlusser,Katherine,AIDS Research and Human Retroviruses,2017,"Comparison of recency assay manufacturer;
+MDRI;
+FRR",Evaluation,Treatment naive HIV-infected women,Zimbabwe Hormonal Contraception and HIV trial,Other: Not defined,C,,,,,Sedia vs. Maxim,,,,Yes,,,,Yes,,,,Yes,,,,Yes,,,,,Concordance,Percentage,,,Yes,,,,,,,,,,,,,,,
+79,303,Sequence ambiguity determined from routine pol sequencing is a reliable tool for real-time surveillance of HIV incidence trends,Lunar,Maja,"Infection, Genetics and Evolution",2019,HIV incidence; HIV surveillance; Comparison of recency assays/algorithms,Evaluation,Treatment naive HIV-infected individuals; MSM; PWID; Heterosexual individuals,SPREAD,Plasma/serum only,Multiple,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,Proportion recent; Sensitivity/Specificity,Percentage,,,,,,,,,,,,,Yes,,,,,
+80,300,"Prevalence, recent infection and predictors of HIV infection in fishing community along the shore of Lake Victoria in Tanzania",Panga,Onna,Journal of Public Health,2021,"HIV prevalence;
+Recent infection characteristics",Field Use,Fishing folks,,Plasma/serum only,,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+Proportion recent",Percentage,,,Yes,,,,,,,,,,,,,,,
+81,297,Cascade of HIV care and population viral suppression in a high-burden region of Kenya,Maman,David,AIDS,2015,"HIV incidence;
+HIV prevalence;
+Cascade of care/Program effectiveness",Field Use,General population,Ndhiwa HIV Impact in Population  Study ,Plasma/serum only,D,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV incidence;
+HIV prevalence","100 PY (incidence);
+Percentage (prevalence)",,,Yes,,,,,,,,,,,,,,,
+82,296,"Transmitted drug resistance to Tenofovir/Emtricitabine among persons with newly diagnosed HIV infection in Shenyang city, Northeast China from 2016 to 2018",Wang,Zhen,BMC Infectious Diseases,2021,"Drug resistance;
+Transmission patterns;
+Molecular epi",Field Use,Individuals with new HIV diagnosis,,Plasma/serum only,Multiple,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Proportion Resistance,Percentage,,,,,,,Yes,,,,,,,,,,,
+83,294,"Estimation of HIV incidence in two Brazilian municipalities, 2013",Szwarcwald,Celia,Revista de Saude Publica,2016,HIV incidence,Field Use,HIV-infected individuals,,Other: Not defined,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"Proportion recent;
+HIV incidence","Percentage (proportion recent);
+100000 inhabitants",,,,Yes,,,,,,,,,,,,,,
+84,288,"Development of a Multiplex Assay for Concurrent Diagnoses and Detection of HIV-1, HIV-2, and Recent HIV-1 Infection in a Single Test",Yufenyuy,Ernest,AIDS Research and Human Retroviruses,2018,Comparison of recency assays/algorithms,Evaluation,"Blood donors;
+Commercially sold units","Boca Biolistics, Inc.",Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,,,Yes,,Yes,,,Yes,,,,,,,,,,
+85,268,Short Communication: The Impact of Viral Suppression and Viral Breakthrough on Limited-Antigen Avidity Assay Results in Individuals with Clade B HIV Infection,Wendel,Sarah,AIDS Research and Human Retroviruses,2017,Identification of viral suppression and breakthrough,Evaluation,"Elite suppressors;
+Treatment naive HIV-infected individuals;
+HIV-infected individuals on ART;
+Virally suppressed individuals on ART with evidence of viral breakthrough",Johns Hopkins HIV Clinical Practice Cohort or Elite Suppressor Cohort,Other: Not defined,B,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,
+86,262,Viral and Host Characteristics of Recent and Established HIV-1 Infections in Kisumu based on a Multiassay Approach,Otecko,Newton,Nature Scientific Reports,2016,Comparison of recency assays/algorithms,Evaluation,Sexually active individuals,Kisumu HIV Incidence Cohort Study (KICoS),Plasma/serum only,Multiple,,,,,Sedia,Yes,,,,,,,Yes,,,,,,,,,,,,,"Proportion recent;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+87,250,Experiences and lessons learned from the real-world implementation of an HIV recent infection testing algorithm in three routine service-delivery settings in Kenya and Zimbabwe,de Wit,Mariken,BMC Health Services Research,2021,Experience with implementation of RITA,Field Use,"HIV-infected pregnant women;
+HIV testing and counseling facility clients;
+FSW","Siaya HDSS; 
+EDARP; 
+",Plasma/serum and/or dried blood spot,Not defined,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Proportion Recent,Percentage,,,Yes,,,,,,,,,,,,,,,
+88,243,Development of an international external quality assurance program for HIV-1 incidence using the Limiting Antigen Avidity assay,Keating,Sheila,PLOS One,2019,"External quality assurance program;
+Comparison of recency assay manufacturer",Evaluation,Blood donors,EQAPOL,Plasma/serum only,Not defined,,,,,Sedia vs. Maxim,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,,,
+89,241,A Comparison of Two Measures of HIV Diversity in Multi-Assay Algorithms for HIV Incidence Estimation,Cousins,Matthew,PLOS One,2014,"Comparison of recency assays/algorithms;
+HIV incidence",Evaluation,"MSM;
+PWID;
+Men and women at risk of HIV infection","MACS;
+ALIVE;
+HIVNET 001/001.1;
+JHHCC;
+HPTN 064;
+HPTN 061",Plasma/serum only,B,,,,,Sedia,,,,,,,,,,,,,,,,,,,Yes,,"Probability of recent classification;
+HIV Incidence",Percentage,Other: ,,,,Yes,,,,,,,,,,,,,
+90,233,Cross-sectional estimates revealed high HIV incidence in Botswana rural communities in the era of successful ART scale-up in 2013-2015,Moyo,Sikhulile,PLOS One,2018,HIV incidence,Field Use,General population,Botswana Combination Prevention Project(BCPP),Plasma/serum only,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV incidence;
+HIV prevalence",Percentage,,,Yes,,,,,,,,,,,,,,,
+91,227,Enhanced surveillance of HIV-1 drug resistance in recently infected MSM in the UK,Cunningham,Emma,Journal of Antimicrobial Chemotherapy,2017,Drug resistance,Field Use,MSM,,Plasma/serum only,Multiple,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,Proportion Recent,Percentage,,,,,,,,,,,,Yes,,,,,,
+92,220,A top scoring pairs classifier for recent HIV infections,Chen,Athena,Statistics in Medicine,2021,Comparison of recency assays/algorithms,Evaluation,HIV-infected women,Hormonal Contraception and HIV Genital Shedding (GS) study,Plasma/serum only,C,,,,,Other: Sedia and Maxim,,,,,,,,,,,Yes,,,,,,,,,,"Probability of recent classification;
+Sensitivity/Specificity",Percentage,,,Yes,,,,,,,,,,,,,,,
+93,214,Comparison of Self-report to Biomarkers of Recent HIV Infection: Findings from the START Trial,Schlusser,Katherine,AIDS and Behavior,2018,Comparison of recent infection identification methods,Evaluation,"Individuals with new HIV diagnosis;
+Individuals with long-standing HIV infection",Strategic Timing of AntiRetroviral Treatment (START) trial,Plasma/serum only,Multiple,,,,,Other: Not defined,Yes,,,,,,,,,,,,,,,,,,,,,,Yes,,,Yes,Yes,,,,,,,,,,Yes,,,
+94,213,Estimating False-Recent Classification for the Limiting-Antigen Avidity EIA and BED-Capture Enzyme Immunoassay in Vietnam: Implications for HIV-1 Incidence Estimates,Shah,Neha,AIDS Research and Human Retroviruses,2017,"Comparison of recency assays/algorithms;
+FRR",Evaluation,Treatment naive chronically infected individuals,,Plasma/serum only,CRF01_AE,,,,,Sedia,,,,,,,,Yes,,,,,,,,Yes,,,,,Proportion recent,Percentage,,,,,,,,Yes,,,,,,,,,,
+95,211,Field Validation of Limiting-Antigen Avidity Enzyme Immunoassay to Estimate HIV-1 Incidence in Cross-Sectional Survey in Swaziland,Duong,Yen,AIDS Research and Human Retroviruses,2019,"HIV incidence;
+Field validation",Evaluation,General population,SHIMS,Plasma/serum only,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"HIV Incidence;
+HIV Prevalence","Percentage (Prevalence and Incidence);
+100 PY (Incidence)",,,Yes,,,,,,,,,,,,,,,
+96,209,Independent assessment of candidate HIV incidence assays on specimens in the CEPHIA repository,Kassanjee,Reshma,AIDS,2014,"Comparison of recency assays/algorithms;
+MDRI;
+FRR",Evaluation,HIV-infected individuals,CEPHIA,Plasma/serum only,Multiple,A1,B,C,D,Sedia,,,,Yes,,,,Yes,,,,,,,,,,,,,,,,,Yes,Yes,Yes,,,,,,,,,,,,,
+97,194,An outbreak of HIV infection among people who inject drugs linked to injection of propofol in Taiwan,Huang,Yu-Ching,PLOS One,2019,Outbreak investigation,Field Use,PWID,,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,
+98,189,Misdiagnosis of HIV infection during a South African community-based survey: implications for rapid HIV testing,Kufa,Tendesayi,Journal of the International AIDS Society,2017,"Identification of recent infection;
+Comparison of diagnostic algorithms",Field Use,General population,HIV Incidence Provincial Surveillance System (HIPSS),Other: Not defined,Not defined,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+99,185,Characterization of HIV-1 genotype specific antigens for the detection of recent and long-term HIV-1 infection in China,Cai,Qundi,Virus Research,2019,Comparison of recency assays/algorithms,Evaluation,"PWID;
+MSM",,Plasma/serum only,Multiple,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,"Sensitivity/Specificity;
+Concordance",Percentage,,,,,,,Yes,,,,,,,,,,,
+100,172,Comparison of cross-sectional HIV incidence assay results from dried blood spots and plasma,Schlusser,Katherine,PLOS One,2017,Comparison of sample types,Evaluation,HIV-infected individuals,CEPHIA,Matched plasma/serum and dried blood spot,Not defined,,,,,Maxim,,,,,,,,,,,,,,,,,,,,,Concordance,Percentage,,,,Yes,Yes,,,,,,,,,,,,,
+101,158,Development of a New Limiting-Antigen Avidity Dot Immuno-Gold Filtration Assay for HIV-1 Incidence,Gao,Zhiyun,PLOS One,2016,Comparison of recency assays/algorithms,Evaluation,"Treatment naive HIV-infected individuals;
+Treatment naive chronically infected individuals;",,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,Yes,,,,,,,,,,,,,Concordance,Percentage,,,,,,,Yes,,,,,,,,,,,
+102,157,Correlates of HIV infection in adolescent girls and young women in Lesotho: results from a population-based survey,Low,Andrea,Lancet HIV,2019,HIV prevalence; HIV incidence; Correlates of HIV infection,Field Use,AGYW,Lesotho PHIA,Other: Not defined,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,HIV prevalence; HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+103,156,Recent HIV Infection among men who have sex with men and transgender women in Tijuana,Skaathun,Britt,Revista de Saude Publica,2020,Recent infection characteristics,Field Use,"MSM;
+TGW",Proyecto Enlaces (Links Project),Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,Yes,,,,,,,,,,,,,,
+104,153,Discrimination between recent and non-recent HIV infections using routine diagnostic serological assays,Hassan,Jaythoon,Medical Microbiology and Immunology,2019,Comparison of recency assays/algorithms,Evaluation,Individuals with new HIV diagnosis,CEPHIA,Plasma/serum only,Not defined,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+Concordance",Percentage,Other: ,,,,,,,,,,,Yes,,,,,,
+105,148,The concordance of the limiting antigen and the Bio-Rad avidity assays in persons from Estonia infected mainly with HIV-1 CRF06_cpx,Huik,Kristi,PLOS One,2019,Comparison of recency assays/algorithms,Evaluation,Individuals with new HIV diagnosis,,Plasma/serum only,Multiple,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+Concordance",Percentage,,,,,,,,,,,,Yes,,,,,,
+106,144,Comparison of HIV Incidence in the Zimbabwe Population-Based HIV Impact Assessment Survey (2015–2016) with Modeled Estimates: Progress Toward Epidemic Control,Gonese,Elizabeth,AIDS Research and Human Retroviruses,2020,"HIV incidence;
+Comparison of HIV incidence models",Field Use,General population,Zimbabwe Population-Based HIV Impact Assessment (ZIMPHIA),Plasma/serum and/or dried blood spot,Not defined,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV incidence;
+HIV Prevalence",Percentage,,,Yes,,,,,,,,,,,,,,,
+107,142,Identification and validation of a multi-assay algorithm for cross-sectional HIV incidence estimation in populations with subtype C infection,Laeyendecker,Oliver,Journal of the International AIDS Society,2018,"Comparison of recency assays/algorithms;
+HIV incidence",Evaluation,"HIV-uninfected women;
+HIV-infected women","Vaginal microbicide trial (CAPRISA);
+Hormonal contraception and HIV infection study;
+HPTN 039;
+HPTN 068",Other: Not defined,C,,,,,Sedia,,,,,,Yes,,,,,,Yes,,,,,,,Yes,,HIV incidence,Percentage,,,Yes,,,,,,,,,,,,,,,
+108,136,Viral Load Criteria and Threshold Optimization to Improve HIV Incidence Assay Characteristics,Kassanjee,Reshma,AIDS,2016,"MDRI;
+FRR;
+Comparison of recency assays/algorithms",Evaluation,HIV-infected individuals,CEPHIA,Plasma/serum only,Multiple,A1,B,C,D,Sedia,,,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,,,,,,,Yes,Yes,Yes,,,,,,,,,,,,,
+109,126,Migration interacts with the local transmission of HIV in developed trade areas: A molecular transmission network analysis in China,Zhang,Jiafeng,"Infection, Genetics and Evolution",2020,"Transmission patterns;
+Molecular epi",Field Use,Individuals with new HIV diagnosis,,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,,,Yes,,,,,,,,,,,
+110,122,Infection Staging and Incidence Surveillance Applications of High Dynamic Range Diagnostic Immuno-Assay Platforms,Grebe,Eduard,JAIDS,2017,"Infection staging;
+Comparison of recency assays/algorithms",Evaluation,HIV-infected individuals,CEPHIA,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,Yes,,Probability of recent classification,Percentage,Yes,,,,,,,,,,,,,,,,,
+111,119,Performance comparison of the Maxim and Sedia Limiting Antigen Avidity assays for HIV incidence surveillance,Sempa,Joseph,PLOS One,2019,Comparison of recency assay manufacturer,Evaluation,HIV-infected individuals,CEPHIA,Plasma/serum only,Multiple,A1,B,C,D,Sedia vs. Maxim,,,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,,,,,Yes,,,,,,,,,,,,,,,,,
+112,116,Decision tree for accurate infection timing in individuals newly diagnosed with HIV-1 infection,Verhofstede,Chris,BMC Infectious Diseases,2017,"Infection time;
+Comparison of recency assays/algorithms",Evaluation,"Individuals with new HIV diagnosis;
+Individuals with documented seroconversion",,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+Concordance;
+Sensitivity/specificity",Percentage,,,,,,,,,,,,,,Yes,,,,
+113,113,Short Communication: Persistence of HIV Antibody Avidity in the Presence of Antiretroviral Therapy,Curtis,Kelly,AIDS Research and Human Retroviruses,2016,"Comparison of recency assays/algorithms;
+Effects of ART on antibody maturation",Evaluation,"Treatment naive HIV-infected individuals;
+HIV-infected individuals on early ART;
+HIV-infected individuals on delayed ART",Seroconversion Incidence Panel Project (SIPP),Other: Not defined,B,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,,,
+114,111,"Validation of the Limiting Antigen Avidity Assay to Estimate Level and Trends in HIV Incidence in an A/D Epidemic in Rakai, Uganda",Laeyendecker,Oliver,AIDS Research and Human Retroviruses,2019,"Comparison of HIV incidence models;
+MDRI;
+FRR",Evaluation,General population,Rakai Community Cohort Study (RCCS),Plasma/serum only,A & D,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,Yes,,,,,HIV incidence,100 PY,,,Yes,,,,,,,,,,,,,,,
+115,107,Successes and gaps in the HIV cascade of care of a high HIV prevalence setting in Zimbabwe: a population-based survey,Conan,Nolwenn,Journal of the International AIDS Society,2020,"HIV prevalence;
+HIV incidence;
+Cascade of care/Program effectiveness",Field Use,General population,,Other: Not defined,,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV Incidence;
+HIV Prevalence","Percentage;
+10000 PY",,,Yes,,,,,,,,,,,,,,,
+116,104,Performance of Bio-Rad and Limiting Antigen Avidity Assays in Detecting Recent HIV Infections Using the Quebec Primary HIV-1 Infection Cohort,Serhir,Bouchra,PLOS One,2016,"Comparison of recency assays/algorithms;
+MDRI;
+FRR",Evaluation,"Individuals with long-standing HIV infection;
+Treatment naive HIV-infected individuals;
+Treatment naive chronically infected individuals","Quebec Primary HIV-1 Infection Cohort;
+Laboratoire de sante publique du Quebec (LSPQ) serobank",Plasma/serum only,Multiple,,,,,Sedia,,,,Yes,,,,Yes,,,,,,,,,,,Yes,Yes,Proportion recent,Percentage,,,,,Yes,,,,,,,,,,,,,
+117,95,Performance of a Limiting-Antigen Avidity Enzyme Immunoassay for Cross-Sectional Estimation of HIV Incidence in the United States,Konikoff,Jacob,PLOS One,2013,"Comparison of recency assays/algorithms;
+Probability of recent infection;
+Comparison of HIV incidence models;
+MDRI",Evaluation,"MSM;
+PWID;
+Men and women at risk of HIV infection","Multicenter AIDS Cohort Study (MACS);
+AIDS Linked to the IntraVenous Experience cohort (ALIVE);
+HIV Network for Prevention Trials 001/001.1 vaccine preparedness cohort (HIVNET 001);
+Johns Hopkins Hospital Clinical Cohort (JHHCC);
+HPTN 061;
+HPTN 064",Plasma/serum only,B,,,,,Sedia,,,,,,,,,,,Yes,Yes,,,,,,,Yes,,"Proportion recent;
+HIV incidence",Percentage,,,,,Yes,,,,,,,,,,,,,
+118,93,"Impact of HIV Subtype on Performance of the Limiting Antigen-Avidity Enzyme Immunoassay, the Bio-Rad Avidity Assay, and the BED Capture Immunoassay in Rakai, Uganda",Longosz,Andrew,AIDS Research and Human Retroviruses,2014,"Comparison of recency assays/algorithms;
+Effect of HIV subtype on assay",Evaluation,HIV-infected individuals,Rakai Community Cohort Study (RCCS),Other: Not defined,A,D,,,,CDC,,,,,,,Yes,,Yes,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,,,
+119,91,Evaluation of the Performance of Three Biomarker Assays for Recent HIV Infection Using a Well-Characterized HIV-1 Subtype C Incidence Cohort,Gonese,Elizabeth,AIDS Research and Human Retroviruses,2019,"Comparison of recency assays/algorithms;
+MDRI;
+FRR",Evaluation,Postpartum women,Zimbabwe Vitamin A for Mothers and Babies (ZVITAMBO) Trial,Plasma/serum only,C,,,,,Sedia,,,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,,,,,,,Yes,,,,,,,,,,,,,,,
+120,86,A Window Into the HIV Epidemic from a South African Emergency Department,Hansoti,Bhakti,AIDS Research and Human Retroviruses,2019,"HIV prevalence;
+HIV incidence;
+Cascade of care/Program effectiveness",Field Use,Emergency department patients,,Plasma/serum only,Not defined,,,,,Maxim,Yes,,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+121,85,Human Galectin-9 Is a Potent Mediator ofHIV Transcription and Reactivation,Abdel-Mohsen,Mohamed,PLOS Pathogens,2016,"Eradication of latent HIV reservoir;
+Quantify/characterize HIV antibody profile",Field Use,HIV-infected individuals on ART,"SCOPE;
+Options",Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,,,,,,,
+122,84,High avidity anti-integrase antibodies discriminate recent and non-recent HIV infection: Implications for HIV incidence assay,Tehrani,Zahra,Journal of Virological Methods,2018,Comparison of recency assays/algorithms,Evaluation,Individuals with long-standing HIV infection,,Plasma/serum only,CRF35_AD,,,,,Sedia,Yes,,,,,,,Yes,,,,,,,,,,,,,Specificity,Percentage,,,,,,,,,Yes,,,,,,,,,
+123,82,Detection of Recent HIV-1 Infection Using a New Limiting-Antigen Avidity Assay: Potential for HIV-1 Incidence Estimates and Avidity Maturation Studies,Duong,Yen,PLOS One,2012,"Optimization of LAg;
+Comparison of recency assays/algorithms
+MDRI;
+FRR",Evaluation,"HIV-infected individuals;
+Treatment naive individuals with AIDS with TB;
+Treatment naive individuals with AIDS without TB","Amsterdam;
+Trinidad;
+Kenya;
+Ethiopia;
+Thailand;
+Cote d'Ivoire;
+HERS",Plasma/serum only,Multiple,A & D,B,C,,CDC,,,Yes,Yes,Yes,Yes,,,,,,,,,,,,,,,,,,,Yes,Yes,Yes,,,Yes,,,,,,Yes,,,,
+124,81,Performance of a Modified In-House HIV-1 Avidity Assay among a Cohort of Newly Diagnosed HIV-1 Infected Individuals and the Effect of ART on the Maturation of HIV-1 Specific Antibodies,Alex,Diviya,Current HIV Research,2019,"Comparison of recency assays/algorithms;
+Effects of ART on antibody maturation",Evaluation,"Treatment naive HIV-infected individuals;
+HIV-infected individuals on ART",Integrated Counselling and Testing Centre (ICTC),Plasma/serum only,C,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,"Sensitivity/Specificity;
+Proportion Recent",Percentage,,,,,,,,,Yes,,,,,,,,,
+125,75,Improved Testing of Recent HIV-1 Infections with the BioRad Avidity Assay Compared to the Limiting Antigen Avidity Assay and BED Capture Enzyme Immunoassay: Evaluation Using Reference Sample Panels from the German Seroconverter Cohort,Hauser,Andrea,PLOS One,2014,"Comparison of recency assays/algorithms;
+FRR",Evaluation,"Individuals with new HIV diagnosis;
+Treated chronically infected individuals;
+Treatment naive slow progressors",German HIV-1 Seroconverter (SC) Cohort,Plasma/serum only,B,Non-B,,,,Sedia,Yes,,,,,,,Yes,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,
+126,74,Computational analysis of antibody dynamics identifies recent HIV-1 infection,Seaton,Kelly,JCI Insight,2017,Comparison of recency assays/algorithms,Evaluation,"Individuals with long-standing HIV infection;
+Individuals with recent HIV infection","Center for HIV/AIDS Vaccine Immunology (CHAVI) 001;
+Center for HIV/AIDS Vaccine Immunology (CHAVI) 008;
+US Military HIV Research Program (RV217);
+CEPHIA",Plasma/serum only,Multiple,,,,,Sedia,,,,Yes,Yes,,,Yes,Yes,,,,,Yes,,,,Yes,,,,,Yes,,,,,,,,,,,,,,,,,
+127,67,HIV incidence in South African blood donors from 2012 to 2016: a comparison of estimation methods,Vermeulen,Marion,International Journal of Transfusion Medicine,2021,Comparison of HIV incidence models,Evaluation,Blood donors,REDS-III South Africa,Other: Not defined,C,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,HIV incidence,1000 PY,,,Yes,,,,,,,,,,,,,,,
+128,60,Impact of Early Antiretroviral Treatment Intitiation on Performance of Cross-Sectional Incidence Assays,Klock,Ethan,AIDS Research and Human Retroviruses,2020,"Comparison of recency assays/algorithms;
+Effects of ART on recency assay",Evaluation,"CGM;
+CGW;
+TGW","Early Capture HIV Cohort Study (RV217);
+Johns Hopkins HIV Cohort Study",Other: Not defined,Multiple,,,,,Sedia,,,,,,,,Yes,,,,Yes,,,,,,,,,,,,,Yes,,Yes,,,Yes,,,,,,,,,,
+129,58,Evaluation of an HIV recent infection testing algorithm with serological assays among men who have sex with men in Mexico,Karatzas-Delgado,Eli,Journal of Infection and Public Health,2020,"Comparison of sample types;
+Comparison of recency assays/algorithms;
+FRR",Evaluation,MSM,,Matched plasma/serum and dried blood spot,,,,,,Maxim,,,,,,,,Yes,,,,,,,,Yes,,,,Yes,"Concordance;
+Sensitivity/Specificity",Percentage,,,,Yes,,,,,,,,,,,,,,
+130,50,Immunological markers for identifying recent HIV infection in North-West India,Chauhan,Chandar,Indian Journal of Medical Research,2020,"FRR;
+Identification of recent infections",Evaluation,"FSW;
+MSM;
+PWID",,Plasma/serum only,C,,,,,Maxim,Yes,,,,,,,,,,,,,,,,,,,Yes,Proportion Recent,Percentage,,,,,,,,,Yes,,,,,,,,,
+131,39,Extremely low viral reservoir in treated chronically HIV-1-infected individuals,Galvez,Cristina,EBioMedicine,2020,"Effects of ART on low viral reservoir; 
+Quantify/characterize HIV antibody profile",Field Use,"Treated chronically infected individuals;
+HIV-infected individuals;
+Individuals on suppressive cART with undetectable viremia",Low Viral Reservoir Treated (LoViReT) cohort,Plasma/serum only,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,
+132,26,Human Immunodeficiency Virus Infection in Adolescents and Mode of Transmission in Southern Africa: A Multinational Analysis of Population-Based Survey Data,Low,Andrea,Clinical Infectious Diseases,2021,HIV infection characteristics,Field Use,ABHIV; APHIV,Zambia PHIA; Eswatini PHIA; Lesotho PHIA; Malawi PHIA; Zimbabwe PHIA ,Other: Not defined,Not defined,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,HIV prevalence,Percentage,,,Yes,,,,,,,,,,,,,,,
+133,22,A Phylogenetic Analysis of Human Immunodeficiency Virus Type 1 Sequences in Kiev: Findings Among Key Populations,Fearnhill,Esther,Clinical Infectious Diseases,2017,"Transmission patterns;
+Genotyping",Field Use,"Individuals presented or referred for HIV testing;
+Individuals with long-standing HIV infection",Concerted Action on SeroConversion to AIDS and Death in Europe (CASCADE) Collaboration,Other: Not defined,Multiple,,,,,Other: Not defined,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Yes,,,,,,,
+134,17,"The infection staging and profile of genotypic distribution and drug resistance mutation among the human immunodeficiency virus-1 infected blood donors from five Chinese blood centers, 2012-2014",Zeng,Peibin,PLOS One,2017,"Drug resistance;
+Genotyping",Field Use,Blood donors,REDS-III,Plasma/serum only,Multiple,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,"Proportion recent;
+Drug resistance prevalence",Percentage,,,,,,,Yes,,,,,,,,,,,
+135,14,"Late diagnosis of human immunodeficiency virus infections in high-risk groups in Karachi, Pakistan",Hasan,Zahra,International Journal of STD & AIDS,2018,Identification of recent infections,Field Use,"PWID;
+TG-HSW",,Plasma/serum only,Not defined,,,,,Maxim,Yes,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,,,,,Yes,,,,,,,,,
+136,9,"Massive Iatrogenic Outbreak of Human Immunodeficiency Virus Type 1 in Rural Cambodia, 2014-2015",Rouet,Francois,Clinical Infectious Diseases,2018,Outbreak investigation,Field Use,Treatment naive HIV-infected individuals,,Plasma/serum only,CRF01_AE,,,,,Sedia,,,,,,,,,,,,,,,,,,,,,Proportion recent,Percentage,,,,,,,,Yes,,,,,,,,,,
+137,3,10-year analysis of human immunodeficiency virus incidence in first-time and repeat donors in Brazil,de Oliveira Garcia Mateos,Sheila,Vox Sanguinis,2021,HIV incidence,Field Use,Blood donors,,Other: Not defined,B,,,,,Sedia,Yes,,,,,,,,,,,,,,,,,,,,HIV Incidence,100000 PY,,,,Yes,,,,,,,,,,,,,,
+138,,CAMPHIA,,,ICAP,2018,"HIV incidence;
+HIV prevalence",Field Use,General population,Cameroon PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+139,,CIPHIA,,,ICAP,2018,"HIV incidence;
+HIV prevalence",Field Use,General population,Cote D'Ivoire PHIA,Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+140,,EPHIA,,,ICAP,2018,"HIV incidence;
+HIV prevalence",Field Use,General population,Ethiopia PHIA,Other: Not defined,C,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+141,,KENPHIA,,,ICAP,2018,"HIV incidence;
+HIV prevalence",Field Use,General population,Kenya PHIA,Other: Not defined,Not defined,,,,,Other: Sedia or Maxim,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+142,,LePHIA,,,ICAP,2017,"HIV incidence;
+HIV prevalence",Field Use,General population,Lesotho PHIA,Other: Not defined,C,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+143,,MPHIA,,,ICAP,2016,"HIV incidence;
+HIV prevalence",Field Use,General population,Malawi PHIA,Other: Not defined,C,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+144,,NAMPHIA,,,ICAP,2017,"HIV incidence;
+HIV prevalence",Field Use,General population,Namibia PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+145,,RPHIA,,,ICAP,2019,"HIV incidence;
+HIV prevalence",Field Use,General population,Rwanda PHIA,Plasma/serum and/or dried blood spot,Multiple,,,,,Other: Sedia (serum/plasma) and Maxim (DBS),Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+146,,SHIMS2,,,ICAP,2017,"HIV incidence;
+HIV prevalence",Field Use,General population,Eswatini PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+147,,THIS,,,ICAP,2017,"HIV incidence;
+HIV prevalence",Field Use,General population,Tanzania PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+148,,UPHIA,,,ICAP,2017,"HIV incidence;
+HIV prevalence",Field Use,General population,Uganda PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+149,,ZAMPHIA,,,ICAP,2016,"HIV incidence;
+HIV prevalence",Field Use,General population,Zambia PHIA,Other: Not defined,Multiple,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+150,,ZIMPHIA,,,ICAP,2016,"HIV incidence;
+HIV prevalence",Field Use,General population,Zimbabwe PHIA,Other: Not defined,C,,,,,Sedia,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
+151,,ZIMPHIA,,,ICAP,2020,"HIV incidence;
+HIV prevalence",Field Use,General population,Zimbabwe PHIA,Other: Not defined,Not defined,,,,,Other: Not defined,Yes,Yes,,,,,,,,,,,,,,,,,,,"HIV prevalence;
+HIV incidence",Percentage,,,Yes,,,,,,,,,,,,,,,
