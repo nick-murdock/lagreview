@@ -6,6 +6,7 @@ data <- read.csv("LAg_sys_review_data.csv")
 
 # Viewing the beginning of the data
 head(data)
+str(data)
 
 # Load packages
 library(tidyr)
@@ -14,6 +15,17 @@ library(tidyverse)
 library(ggplot2)
 library(lubridate)
 library(broom)
+
+# Data clean-up
+data %>% 
+  count(unknown)
+
+data.v2 <- data %>% 
+  mutate("unknown" = ifelse(unknown == "Yes", "Yes", "NA"))
+
+data.v2$unknown <- as.factor(data.v2$unknown)
+
+str(data.v2)
 
 # Test Analyses 
 hist(data$year)
