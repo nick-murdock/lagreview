@@ -215,7 +215,7 @@ manufac.table <- data.v2 %>%
                   group_by(eval_field) %>%
                   count(assay_manufact)
 
-## Number of studies per sub-geographic region where samples were collected from
+## Sub-geographic region where samples were collected from
 eval_regions <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
          northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
@@ -263,3 +263,6 @@ ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count),
                               "western_europe" = "Western Europe")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
+
+## Subtype (JL working in a separate branch)
+
