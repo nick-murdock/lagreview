@@ -213,13 +213,31 @@ eval_region_sum <- eval_regions %>% group_by(eval_field) %>%
 gathered_eval_region <- eval_region_sum %>% 
   gather(key = "sub_geo", value = "count", 2:19)
 
-ggplot(data = gathered_eval_region, aes(x = sub_geo, 
+ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count), 
                                         y = count, 
                                         fill = eval_field)) +
   geom_bar(stat = "identity", position = "dodge", col = "white") +  
   labs(title = "Number of studies where samples were collected to conduct LAg studies",
        x = "Sub-Geographic Region", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
+  scale_x_discrete(labels = c("australia_new_zealand" = "Australia & New Zealand",
+                              "central_asia" = "Central Asia",
+                              "eastern_asia" = "Eastern Asia",
+                              "eastern_europe" = "Eastern Europe",
+                              "latin_america_caribbean" = "Latin American & Caribbean",
+                              "melanesia" = "Melanesia",
+                              "micronesia" = "Micronesia",
+                              "northern_africa" = "Northern Africa",
+                              "northern_america" = "Northern America",
+                              "northern_europe" = "Northern Europe",
+                              "polynesia" = "Polynesia",
+                              "south_eastern_asia" = "South Eastern Asia",
+                              "southern_asia" = "Southern Asia",
+                              "southern_europe" = "Southern Europe",
+                              "sub_saharan_africa" = "Sub-Saharan Africa",
+                              "unknown" = "Unknown",
+                              "western_asia" = "Western Asia",
+                              "western_europe" = "Western Europe")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
