@@ -136,7 +136,10 @@ data.v2 %>% count(polynesia)
 
 ## Cleaning up subtype_1 fields where it was blank instead of not defined
 data.v2 %>% count(subtype_1)
-
+data.v2 %>% count(subtype_2)
+data.v2 %>% count(subtype_3)
+data.v2 %>% count(subtype_4)
+data.v2 %>% count(subtype_5)
 data.v2$subtype_1[(data.v2$subtype_1 == "")]<- "Not defined"
 
 data.v2 %>% count(subtype_1)
@@ -236,5 +239,6 @@ ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count),
 subtype <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
-subtype %>% group_by(eval_field) %>%
-  count(subtype_1)
+unique(as.vector(as.matrix(subtype)))
+
+subtype %>% gather("subtype", "count", 2:6) %>% table()
