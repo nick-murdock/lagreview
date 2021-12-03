@@ -20,59 +20,41 @@ str(data)
 str(data[,41:58])
 
 ## Viewing counts of each region for clean-up
-data %>% 
-  count(unknown)
+data %>% count(unknown)
 
-data %>% 
-  count(northern_africa)
+data %>% count(northern_africa)
 
-data %>% 
-  count(sub_saharan_africa)
+data %>% count(sub_saharan_africa)
 
-data %>% 
-  count(latin_america_caribbean)
+data %>% count(latin_america_caribbean)
 
-data %>% 
-  count(northern_america)
+data %>% count(northern_america)
 
-data %>% 
-  count(central_asia)
+data %>% count(central_asia)
 
-data %>% 
-  count(eastern_asia)
+data %>% count(eastern_asia)
 
-data %>% 
-  count(south_eastern_asia)
+data %>% count(south_eastern_asia)
 
-data %>% 
-  count(southern_asia)
+data %>% count(southern_asia)
 
-data %>% 
-  count(western_asia)
+data %>% count(western_asia)
 
-data %>% 
-  count(eastern_europe)
+data %>% count(eastern_europe)
 
-data %>% 
-  count(northern_europe)
+data %>% count(northern_europe)
 
-data %>% 
-  count(southern_europe)
+data %>% count(southern_europe)
 
-data %>% 
-  count(western_europe)
+data %>% count(western_europe)
 
-data %>% 
-  count(australia_new_zealand)
+data %>% count(australia_new_zealand)
 
-data %>% 
-  count(melanesia)
+data %>% count(melanesia)
 
-data %>% 
-  count(micronesia)
+data %>% count(micronesia)
 
-data %>% 
-  count(polynesia)
+data %>% count(polynesia)
 
 ## Create new dataframe from original and make all regions into Yes (1) or No (0)
 data.v2 <- data %>% 
@@ -116,72 +98,58 @@ data.v2 <- data %>%
 str(data.v2[,41:58])
 
 ## Make sure that the numbers are the same as the original
-data.v2 %>% 
-  count(unknown)
+data.v2 %>% count(unknown)
 
-data.v2 %>% 
-  count(northern_africa)
+data.v2 %>% count(northern_africa)
 
-data.v2 %>% 
-  count(sub_saharan_africa)
+data.v2 %>% count(sub_saharan_africa)
 
-data.v2 %>% 
-  count(latin_america_caribbean)
+data.v2 %>% count(latin_america_caribbean)
 
-data.v2 %>% 
-  count(northern_america)
+data.v2 %>% count(northern_america)
 
-data.v2 %>% 
-  count(central_asia)
+data.v2 %>% count(central_asia)
 
-data.v2 %>% 
-  count(eastern_asia)
+data.v2 %>% count(eastern_asia)
 
-data.v2 %>% 
-  count(south_eastern_asia)
+data.v2 %>% count(south_eastern_asia)
 
-data.v2 %>% 
-  count(southern_asia)
+data.v2 %>% count(southern_asia)
 
-data.v2 %>% 
-  count(western_asia)
+data.v2 %>% count(western_asia)
 
-data.v2 %>% 
-  count(eastern_europe)
+data.v2 %>% count(eastern_europe)
 
-data.v2 %>% 
-  count(northern_europe)
+data.v2 %>% count(northern_europe)
 
-data.v2 %>% 
-  count(southern_europe)
+data.v2 %>% count(southern_europe)
 
-data.v2 %>% 
-  count(western_europe)
+data.v2 %>% count(western_europe)
 
-data.v2 %>% 
-  count(australia_new_zealand)
+data.v2 %>% count(australia_new_zealand)
 
-data.v2 %>% 
-  count(melanesia)
+data.v2 %>% count(melanesia)
 
-data.v2 %>% 
-  count(micronesia)
+data.v2 %>% count(micronesia)
 
-data.v2 %>% 
-  count(polynesia)
+data.v2 %>% count(polynesia)
 
+## Cleaning up subtype_1 fields where it was blank instead of not defined
+data.v2 %>% count(subtype_1)
+
+data.v2$subtype_1[(data.v2$subtype_1 == "")]<- "Not defined"
+
+data.v2 %>% count(subtype_1)
 # Test Analyses 
 hist(data.v2$year)
-data.v2 %>%
-  group_by(eval_field) %>%
+data.v2 %>% group_by(eval_field) %>%
   count()
 
 count(data.v2[which(data.v2$eval_field == 'Evaluation')])
 
 table(data.v2$eval_field)
 
-data.v2 %>% 
-  group_by(eval_field) %>% 
+data.v2 %>% group_by(eval_field) %>% 
   count(unknown:polynesia)
 
 data.v2 %>%
@@ -265,4 +233,8 @@ ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count),
         plot.title = element_text(hjust = 0.5))
 
 ## Subtype (JL working in a separate branch)
+subtype <- data.v2 %>% group_by(eval_field) %>%
+  select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
+subtype %>% group_by(eval_field) %>%
+  count(subtype_1)
