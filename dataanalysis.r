@@ -189,10 +189,33 @@ data.v2 %>%
   group_by(eval_field) %>%
   summarise(no = n()) %>%
   spread(eval_field, no)
+# END TEST ANALYSES
 
-  
-## Create new df of just sub-geo regions to create plot of how many studies 
-## were conducted where samples were collected
+# Tables & Plots
+## Journal
+journal.table <- table(data.v2$journal)
+
+## Year
+year.table <- table(data.v2$year)
+
+## Evaluation / Field Use
+eval.table <- table(data.v2$eval_field)
+
+## Population Descriptions
+population.table <- table(data.v2$pop_descript)
+
+## Cohort Descriptions
+cohort.table <- table(data.v2$cohort_descript)
+
+## Sample Type
+sample.table <- table(data.v2$sample_type)
+
+## Assay Manufacturer
+manufac.table <- data.v2.v2 %>%
+                  group_by(eval_field) %>%
+                  count(assay_manufact)
+
+## Number of studies per sub-geographic region where samples were collected from
 eval_regions <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
          northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
@@ -240,31 +263,3 @@ ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count),
                               "western_europe" = "Western Europe")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
-
-# END TEST ANALYSES
-
-# Tables
-## Journal
-journal.table <- table(data.v2$journal)
-
-## Year
-year.table <- table(data.v2$year)
-
-## Evaluation / Field Use
-eval.table <- table(data.v2$eval_field)
-
-## Population Descriptions
-population.table <- table(data.v2$pop_descript)
-
-## Cohort Descriptions
-cohort.table <- table(data.v2$cohort_descript)
-
-## Sample Type
-sample.table <- table(data.v2$sample_type)
-
-## Assay Manufacturer
-manufac.table <- data.v2.v2 %>%
-                  group_by(eval_field) %>%
-                  count(assay_manufact)
-
-
