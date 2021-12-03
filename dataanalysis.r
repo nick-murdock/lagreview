@@ -211,7 +211,7 @@ cohort.table <- table(data.v2$cohort_descript)
 sample.table <- table(data.v2$sample_type)
 
 ## Assay Manufacturer
-manufac.table <- data.v2.v2 %>%
+manufac.table <- data.v2 %>%
                   group_by(eval_field) %>%
                   count(assay_manufact)
 
