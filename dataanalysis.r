@@ -113,26 +113,6 @@ data.v2 <- data %>%
   mutate("polynesia" = ifelse(polynesia == "Yes" & 
                                  !is.na(polynesia), 1, 0))
 
-## Change structure of region column into factors
-#data.v2$unknown <- as.numeric(data.v2$unknown)
-#data.v2$northern_africa <- as.factor(data.v2$northern_africa)
-#data.v2$sub_saharan_africa <- as.factor(data.v2$sub_saharan_africa)
-#data.v2$latin_america_caribbean <- as.factor(data.v2$latin_america_caribbean)
-#data.v2$northern_america <- as.factor(data.v2$northern_america)
-#data.v2$central_asia <- as.factor(data.v2$central_asia)
-#data.v2$eastern_asia <- as.factor(data.v2$eastern_asia)
-#data.v2$south_eastern_asia <- as.factor(data.v2$south_eastern_asia)
-#data.v2$southern_asia <- as.factor(data.v2$southern_asia)
-#data.v2$western_asia <- as.factor(data.v2$western_asia)
-#data.v2$eastern_europe <- as.factor(data.v2$eastern_europe)
-#data.v2$northern_europe <- as.factor(data.v2$northern_europe)
-#data.v2$southern_europe <- as.factor(data.v2$southern_europe)
-#data.v2$western_europe <- as.factor(data.v2$western_europe)
-#data.v2$australia_new_zealand <- as.factor(data.v2$australia_new_zealand)
-#data.v2$melanesia <- as.factor(data.v2$melanesia)
-#data.v2$micronesia <- as.factor(data.v2$micronesia)
-#data.v2$polynesia <- as.factor(data.v2$polynesia)
-
 str(data.v2[,41:58])
 
 ## Make sure that the numbers are the same as the original
