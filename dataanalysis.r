@@ -288,3 +288,13 @@ gathered.subtype.v2 <- gathered.subtype.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype)
 
 subtype.table <- as.data.frame(table(gathered.subtype.v2))
+
+ggplot(data = subtype.table, aes(x = reorder(subtype, Freq), 
+                                   y = Freq, 
+                                   fill = eval_field)) +
+  geom_bar(stat = "identity", position = "dodge", col = "white") +  
+  labs(title = "Number of studies based on HIV-1 subtypes",
+       x = "HIV-1 Subtypes", y = "Count (n)") +
+  scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
