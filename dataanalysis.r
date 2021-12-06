@@ -135,6 +135,7 @@ data.v2 %>% count(micronesia)
 data.v2 %>% count(polynesia)
 
 ## Cleaning up subtype_1 fields where it was blank instead of not defined
+## All rows in subtype_1 column should have a value
 data.v2 %>% count(subtype_1)
 data.v2 %>% count(subtype_2)
 data.v2 %>% count(subtype_3)
@@ -187,13 +188,16 @@ manufac.table <- data.v2 %>%
                   count(assay_manufact)
 
 ## Sub-geographic region where samples were collected from
-eval_regions <- data.v2 %>% group_by(eval_field) %>%
+
+### Create new df containing regions and eval/field use columns
+regions <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
          northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
          eastern_europe, northern_europe, southern_europe, western_europe, australia_new_zealand, melanesia,
          micronesia, polynesia) 
 
-eval_region_sum <- eval_regions %>% group_by(eval_field) %>%
+### Count the number of specific region per evaluation or field use study
+region.sum <- regions %>% group_by(eval_field) %>%
   summarize(unknown = sum(unknown),northern_africa = sum(northern_africa), 
             sub_saharan_africa = sum(sub_saharan_africa), latin_america_caribbean = sum(latin_america_caribbean),
             northern_america = sum(northern_america), central_asia = sum(central_asia), 
@@ -204,10 +208,11 @@ eval_region_sum <- eval_regions %>% group_by(eval_field) %>%
             australia_new_zealand = sum(australia_new_zealand), melanesia = sum(melanesia),
             micronesia = sum(micronesia), polynesia = sum(polynesia))
 
-gathered_eval_region <- eval_region_sum %>% 
+### Reorganize table and plot
+gathered.region <- region.sum %>% 
   gather(key = "sub_geo", value = "count", 2:19)
 
-ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count), 
+ggplot(data = gathered.region, aes(x = reorder(sub_geo, count), 
                                         y = count, 
                                         fill = eval_field)) +
   geom_bar(stat = "identity", position = "dodge", col = "white") +  
@@ -236,9 +241,47 @@ ggplot(data = gathered_eval_region, aes(x = reorder(sub_geo, count),
         plot.title = element_text(hjust = 0.5))
 
 ## Subtype (JL working in a separate branch)
+
+### Create neew df containing subtype and eval/field use columns
 subtype <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
-unique(as.vector(as.matrix(subtype)))
+### Reorganize df, group same subtypes together that were entered differently, remove missings
+gathered.subtype <- subtype %>% gather("column", "subtype", 2:6) %>% as.data.frame(table())
 
-subtype %>% gather("subtype", "count", 2:6) %>% table()
+str(gathered.subtype)
+
+gathered.subtype$subtype <- as.factor(gathered.subtype$subtype)
+
+table(gathered.subtype$subtype)
+
+gathered.subtype.v2 <- gathered.subtype %>% 
+  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
+                              (!(is.na(subtype) | subtype == "")), "A", 
+                     ifelse(subtype == "A & D" & 
+                              (!(is.na(subtype) | subtype == "")), "A & D",
+                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
+                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
+                     ifelse(subtype == "B" &
+                              (!(is.na(subtype) | subtype == "")), "B",
+                     ifelse(subtype == "C" &
+                              (!(is.na(subtype) | subtype == "")), "C",
+                     ifelse(subtype == "C/BC" &
+                              (!(is.na(subtype) | subtype == "")), "C/BC",
+                     ifelse(subtype == "CRF35_AD" &
+                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
+                     ifelse(subtype == "D" &
+                              (!(is.na(subtype) | subtype == "")), "D",
+                     ifelse(subtype == "Multiple" &
+                              (!(is.na(subtype) | subtype == "")), "Multiple",
+                     ifelse(subtype == "Non-B" &
+                              (!(is.na(subtype) | subtype == "")), "Non-B",
+                     ifelse(subtype == "Not defined" &
+                             (!(is.na(subtype) | subtype == "")), "Not defined",
+                     "NA"))))))))))))
+
+table(gathered.subtype.v2$subtype)
+
+gathered.subtype.v2 <- gathered.subtype.v2[!(gathered.subtype.v2$subtype=="NA"), ]
+
+subtype.table <- table(gathered.subtype.v2)
