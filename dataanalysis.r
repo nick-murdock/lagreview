@@ -284,4 +284,7 @@ table(gathered.subtype.v2$subtype)
 
 gathered.subtype.v2 <- gathered.subtype.v2[!(gathered.subtype.v2$subtype=="NA"), ]
 
-subtype.table <- table(gathered.subtype.v2)
+gathered.subtype.v2 <- gathered.subtype.v2 %>% group_by(eval_field) %>%
+  select(eval_field, subtype)
+
+subtype.table <- as.data.frame(table(gathered.subtype.v2))
