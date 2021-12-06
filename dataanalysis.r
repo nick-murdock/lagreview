@@ -1,4 +1,4 @@
-# THIS FILE IS FOR ALL data ANALYSIS PORTIONS OF THE COVIDENCE REVIEW
+# THIS FILE IS FOR ALL DATA ANALYSIS PORTIONS OF THE COVIDENCE REVIEW
 
 # Load packages
 library(tidyr)
@@ -12,7 +12,7 @@ library(broom)
 
 data <- read.csv("LAg_sys_review_data.csv")
 
-# Viewing the beginning of the data.v2
+# Viewing the beginning of the data
 head(data)
 str(data)
 
