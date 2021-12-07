@@ -300,3 +300,64 @@ ggplot(data = subtype.table, aes(x = reorder(subtype, Freq),
         plot.title = element_text(hjust = 0.5))
 
 ## MDRI (JL working on separate branch)
+names(data.v2)
+
+### Checking mdri, frr, assay manufacturer variables have expected responses
+str(data.v2[,21:38])
+str(data.v2[,13:16])
+data.v2 %>% count(assay_manufact)
+table(data.v2$assay_manufact, data.v2$eval_field)
+
+mdri <- data.v2 %>% group_by(assay_manufact) %>%
+  select(assay_manufact, eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5, 
+         mdri_1, mdri_1_5, mdri_2, mdri_other, mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
+         mdri_vl_other, mdri_algorithm_other) %>%
+  filter(eval_field == "Evaluation")
+
+gathered.mdri <- mdri %>% gather("column", "subtype", 3:7) %>% as.data.frame(table())
+str(gathered.mdri)
+gathered.mdri$subtype <- as.factor(gathered.mdri$subtype)
+
+gathered.mdri.v2 <- gathered.mdri %>% 
+  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
+                              (!(is.na(subtype) | subtype == "")), "A", 
+                     ifelse(subtype == "A & D" & 
+                              (!(is.na(subtype) | subtype == "")), "A & D",
+                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
+                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
+                     ifelse(subtype == "B" &
+                              (!(is.na(subtype) | subtype == "")), "B",
+                     ifelse(subtype == "C" &
+                              (!(is.na(subtype) | subtype == "")), "C",
+                     ifelse(subtype == "C/BC" &
+                              (!(is.na(subtype) | subtype == "")), "C/BC",
+                     ifelse(subtype == "CRF35_AD" &
+                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
+                     ifelse(subtype == "D" &
+                              (!(is.na(subtype) | subtype == "")), "D",
+                     ifelse(subtype == "Multiple" &
+                              (!(is.na(subtype) | subtype == "")), "Multiple",
+                     ifelse(subtype == "Non-B" &
+                              (!(is.na(subtype) | subtype == "")), "Non-B",
+                     ifelse(subtype == "Not defined" &
+                              (!(is.na(subtype) | subtype == "")), "Not defined",
+                     "NA")))))))))))) %>%
+  filter(subtype != "NA")
+
+table(gathered.mdri.v2$subtype)
+table(gathered.mdri.v2$assay_manufact, gathered.mdri.v2$eval_field)
+
+gathered.mdri.v2 <- gathered.mdri.v2 %>% 
+  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC", 
+                            ifelse(assay_manufact == "Sedia", "Sedia",
+                            ifelse(assay_manufact == "Maxim", "Maxim",
+                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
+                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
+                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
+                                     assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
+                            "NA")))))))
+
+mdri.table <- gathered.mdri.v2 %>% group_by(assay_manufact, subtype) %>%
+  select(assay_manufact, subtype, mdri_1, mdri_1_5, mdri_2, mdri_other, 
+         mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
+         mdri_vl_other, mdri_algorithm_other)
