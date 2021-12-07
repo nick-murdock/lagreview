@@ -300,5 +300,3 @@ ggplot(data = subtype.table, aes(x = reorder(subtype, Freq),
         plot.title = element_text(hjust = 0.5))
 
 ## MDRI (JL working on separate branch)
-
-
