@@ -144,6 +144,46 @@ data.v2 %>% count(subtype_5)
 data.v2$subtype_1[(data.v2$subtype_1 == "")]<- "Not defined"
 
 data.v2 %>% count(subtype_1)
+
+## Make mdri and frr variables into yes (1) or no (0)
+data.v2 <- data.v2 %>% 
+  mutate("mdri_1" = ifelse(mdri_1 == "Yes" &
+                              !is.na(mdri_1), 1, 0)) %>%
+  mutate("mdri_1_5" = ifelse(mdri_1_5 == "Yes" &
+                                      !is.na(mdri_1_5), 1, 0)) %>%
+  mutate("mdri_2" = ifelse(mdri_2 == "Yes" &
+                                         !is.na(mdri_2), 1, 0)) %>%
+  mutate("mdri_other" = ifelse(mdri_other == "Yes" &
+                                              !is.na(mdri_other), 1, 0)) %>%
+  mutate("mdri_1_vl_1000" = ifelse(mdri_1_vl_1000 == "Yes" &
+                                       !is.na(mdri_1_vl_1000), 1,0)) %>%
+  mutate("mdri_1_5_vl_1000" = ifelse(mdri_1_5_vl_1000 == "Yes" &
+                                   !is.na(mdri_1_5_vl_1000), 1, 0)) %>%
+  mutate("mdri_2_vl_1000" = ifelse(mdri_2_vl_1000 == "Yes" & 
+                                   !is.na(mdri_2_vl_1000), 1, 0)) %>%
+  mutate("mdri_vl_other" = ifelse(mdri_vl_other == "Yes" & 
+                                         !is.na(mdri_vl_other), 1, 0)) %>%
+  mutate("mdri_algorithm_other" = ifelse(mdri_algorithm_other == "Yes" & 
+                                    !is.na(mdri_algorithm_other), 1, 0)) %>%
+  mutate("frr_1" = ifelse(frr_1 == "Yes" &
+                             !is.na(frr_1), 1, 0)) %>%
+  mutate("frr_1_5" = ifelse(frr_1_5 == "Yes" &
+                               !is.na(frr_1_5), 1, 0)) %>%
+  mutate("frr_2" = ifelse(frr_2 == "Yes" &
+                             !is.na(frr_2), 1, 0)) %>%
+  mutate("frr_other" = ifelse(frr_other == "Yes" &
+                                 !is.na(frr_other), 1, 0)) %>%
+  mutate("frr_1_vl_1000" = ifelse(frr_1_vl_1000 == "Yes" &
+                                     !is.na(frr_1_vl_1000), 1,0)) %>%
+  mutate("frr_1_5_vl_1000" = ifelse(frr_1_5_vl_1000 == "Yes" &
+                                       !is.na(frr_1_5_vl_1000), 1, 0)) %>%
+  mutate("frr_2_vl_1000" = ifelse(frr_2_vl_1000 == "Yes" & 
+                                     !is.na(frr_2_vl_1000), 1, 0)) %>%
+  mutate("frr_vl_other" = ifelse(frr_vl_other == "Yes" & 
+                                    !is.na(frr_vl_other), 1, 0)) %>%
+  mutate("frr_algorithm_other" = ifelse(frr_algorithm_other == "Yes" & 
+                                           !is.na(frr_algorithm_other), 1, 0)) 
+
 # Test Analyses 
 hist(data.v2$year)
 data.v2 %>% group_by(eval_field) %>%
@@ -357,7 +397,37 @@ gathered.mdri.v2 <- gathered.mdri.v2 %>%
                                      assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
                             "NA")))))))
 
-mdri.table <- gathered.mdri.v2 %>% group_by(assay_manufact, subtype) %>%
+mdri.table <- gathered.mdri.v2 %>% group_by(subtype) %>%
   select(assay_manufact, subtype, mdri_1, mdri_1_5, mdri_2, mdri_other, 
          mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
          mdri_vl_other, mdri_algorithm_other)
+
+mdri.sum <- mdri.table %>% group_by(assay_manufact, subtype) %>%
+  summarize(mdri_1 = sum(mdri_1), mdri_1_5 = sum(mdri_1_5), mdri_2 = sum(mdri_2), 
+            mdri_other = sum(mdri_other), mdri_1_vl_1000 = sum(mdri_1_vl_1000), 
+            mdri_1_5_vl_1000 = sum(mdri_1_5_vl_1000), mdri_2_vl_1000 = sum(mdri_2_vl_1000), 
+            mdri_vl_other = sum(mdri_vl_other), mdri_algorithm_other = sum(mdri_algorithm_other))
+
+mdri.sum.gather <- mdri.sum %>% gather("mdri_threshold", "count", 3:11) %>% 
+  as.data.frame(table()) %>% filter(count != 0)
+
+ggplot(data = mdri.sum.gather, aes(x = mdri_threshold, 
+                                   y = count,
+                                   fill = assay_manufact)) +
+  geom_bar(stat = "identity", position = "dodge", col = "white") +
+  facet_wrap(~ subtype, ncol = 2) +  
+  labs(title = "Number of LAg algorithms and thresholds evaluated for estimating MDRI 
+       based on assay manufacturer and HIV-1 subtype",
+       x = "MDRI thresholds and algorithms", y = "Count (n)") +
+  scale_fill_discrete(name = "Assay manufacturer") +
+  scale_x_discrete(labels = c("mdri_1" = "ODn < 1",
+                                 "mdri_1_5" = "ODn < 1.5",
+                                 "mdri_2" = "ODn < 2",
+                                 "mdri_other" = "Other ODn",
+                                 "mdri_1_vl_1000" = "ODn < 1 + VL < 1000",
+                                 "mdri_1_5_vl_1000" = "ODn < 1.5 + VL < 1000",
+                                 "mdri_2_vl_1000" = "ODn < 2 + VL < 1000",
+                                 "mdri_vl_other" = "Other ODn + VL",
+                                 "mdri_algorithm_other" = "Other algorithm")) +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
