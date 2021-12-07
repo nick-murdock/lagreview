@@ -318,11 +318,8 @@ gathered.subtype.v2 <- gathered.subtype %>%
                               (!(is.na(subtype) | subtype == "")), "Non-B",
                      ifelse(subtype == "Not defined" &
                              (!(is.na(subtype) | subtype == "")), "Not defined",
-                     "NA"))))))))))))
-
-table(gathered.subtype.v2$subtype)
-
-gathered.subtype.v2 <- gathered.subtype.v2[!(gathered.subtype.v2$subtype=="NA"), ]
+                     "NA")))))))))))) %>%
+  filter(subtype != "NA")
 
 gathered.subtype.v2 <- gathered.subtype.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype)
