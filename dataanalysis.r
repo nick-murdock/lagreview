@@ -286,7 +286,7 @@ ggplot(data = gathered.region, aes(x = reorder(sub_geo, count),
 subtype <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
-### Reorganize df, group same subtypes together that were entered differently, remove missings
+### Reorganize df, relabel same subtypes together that were entered differently, remove missings
 gathered.subtype <- subtype %>% gather("column", "subtype", 2:6) %>% as.data.frame(table())
 
 str(gathered.subtype)
@@ -336,8 +336,7 @@ ggplot(data = subtype.table, aes(x = reorder(subtype, Freq),
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
-## MDRI (JL working on separate branch)
-names(data.v2)
+## MDRI
 
 ### Checking mdri, frr, assay manufacturer variables have expected responses
 str(data.v2[,21:38])
@@ -345,12 +344,14 @@ str(data.v2[,13:16])
 data.v2 %>% count(assay_manufact)
 table(data.v2$assay_manufact, data.v2$eval_field)
 
+### Keep only relevant variables and filter for only evaluation studies
 mdri <- data.v2 %>% group_by(assay_manufact) %>%
   select(assay_manufact, eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5, 
          mdri_1, mdri_1_5, mdri_2, mdri_other, mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
          mdri_vl_other, mdri_algorithm_other) %>%
   filter(eval_field == "Evaluation")
 
+### Gather the mdri df, Relabel same subtypes together, and remove missings
 gathered.mdri <- mdri %>% gather("column", "subtype", 3:7) %>% as.data.frame(table())
 str(gathered.mdri)
 gathered.mdri$subtype <- as.factor(gathered.mdri$subtype)
@@ -384,6 +385,7 @@ gathered.mdri.v2 <- gathered.mdri %>%
 table(gathered.mdri.v2$subtype)
 table(gathered.mdri.v2$assay_manufact, gathered.mdri.v2$eval_field)
 
+### Relabel same assay manufacturer variables
 gathered.mdri.v2 <- gathered.mdri.v2 %>% 
   mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC", 
                             ifelse(assay_manufact == "Sedia", "Sedia",
@@ -394,20 +396,24 @@ gathered.mdri.v2 <- gathered.mdri.v2 %>%
                                      assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
                             "NA")))))))
 
+### Create new df with assay manufacturer, subtype, and MDRI thresholds/algorithms
 mdri.table <- gathered.mdri.v2 %>% group_by(subtype) %>%
   select(assay_manufact, subtype, mdri_1, mdri_1_5, mdri_2, mdri_other, 
          mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
          mdri_vl_other, mdri_algorithm_other)
 
+### Group by assay manufacturer and subtype, then sum by each mdri threshold/algorithm
 mdri.sum <- mdri.table %>% group_by(assay_manufact, subtype) %>%
   summarize(mdri_1 = sum(mdri_1), mdri_1_5 = sum(mdri_1_5), mdri_2 = sum(mdri_2), 
             mdri_other = sum(mdri_other), mdri_1_vl_1000 = sum(mdri_1_vl_1000), 
             mdri_1_5_vl_1000 = sum(mdri_1_5_vl_1000), mdri_2_vl_1000 = sum(mdri_2_vl_1000), 
             mdri_vl_other = sum(mdri_vl_other), mdri_algorithm_other = sum(mdri_algorithm_other))
 
+### Gather the df and filter out rows without any mdri threshold/algorithm counts
 mdri.sum.gather <- mdri.sum %>% gather("mdri_threshold", "count", 3:11) %>% 
   as.data.frame(table()) %>% filter(count != 0)
 
+### Plot the mdri df
 ggplot(data = mdri.sum.gather, aes(x = mdri_threshold, 
                                    y = count,
                                    fill = assay_manufact)) +
