@@ -240,7 +240,7 @@ ggplot(data = gathered.region, aes(x = reorder(sub_geo, count),
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
-## Subtype (JL working in a separate branch)
+## Subtype
 
 ### Create neew df containing subtype and eval/field use columns
 subtype <- data.v2 %>% group_by(eval_field) %>%
@@ -298,3 +298,6 @@ ggplot(data = subtype.table, aes(x = reorder(subtype, Freq),
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
+
+## MDRI (JL working on separate branch)
+
