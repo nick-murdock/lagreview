@@ -449,16 +449,21 @@ ggplot(data = mdri.sum.gather, aes(x = mdri_threshold,
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating MDRI 
        based on assay manufacturer and HIV-1 subtype",
        x = "MDRI thresholds and algorithms", y = "Count (n)") +
-  scale_fill_discrete(name = "Assay manufacturer") +
   scale_x_discrete(labels = c("mdri_1" = "ODn < 1",
-                                 "mdri_1_5" = "ODn < 1.5",
-                                 "mdri_2" = "ODn < 2",
-                                 "mdri_other" = "Other ODn",
-                                 "mdri_1_vl_1000" = "ODn < 1 + VL < 1000",
-                                 "mdri_1_5_vl_1000" = "ODn < 1.5 + VL < 1000",
-                                 "mdri_2_vl_1000" = "ODn < 2 + VL < 1000",
-                                 "mdri_vl_other" = "Other ODn + VL",
-                                 "mdri_algorithm_other" = "Other algorithm")) +
+                              "mdri_1_5" = "ODn < 1.5",
+                              "mdri_2" = "ODn < 2",
+                              "mdri_other" = "Other ODn",
+                              "mdri_1_vl_1000" = "ODn < 1 + VL < 1000",
+                              "mdri_1_5_vl_1000" = "ODn < 1.5 + VL < 1000",
+                              "mdri_2_vl_1000" = "ODn < 2 + VL < 1000",
+                              "mdri_vl_other" = "Other ODn + VL",
+                              "mdri_algorithm_other" = "Other algorithm")) +
+  scale_fill_manual(name = "Assay manufacturer",
+                    values = c("CDC" = "cornflowerblue",
+                               "Not defined" = "grey",
+                               "Sedia" = "seagreen3",
+                               "Sedia and Maxim" = "blueviolet",
+                               "Sedia vs. Maxim" = "tomato")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
@@ -548,7 +553,6 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating frr 
        based on assay manufacturer and HIV-1 subtype",
        x = "frr thresholds and algorithms", y = "Count (n)") +
-  scale_fill_discrete(name = "Assay manufacturer") +
   scale_x_discrete(labels = c("frr_1" = "ODn < 1",
                               "frr_1_5" = "ODn < 1.5",
                               "frr_2" = "ODn < 2",
@@ -558,5 +562,11 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
                               "frr_2_vl_1000" = "ODn < 2 + VL < 1000",
                               "frr_vl_other" = "Other ODn + VL",
                               "frr_algorithm_other" = "Other algorithm")) +
+  scale_fill_manual(name = "Assay manufacturer",
+                    values = c("CDC" = "cornflowerblue",
+                               "Not defined" = "grey",
+                               "Sedia" = "seagreen3",
+                               "Maxim" = "darkgoldenrod1",
+                               "Sedia vs. Maxim" = "tomato")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
