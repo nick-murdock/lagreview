@@ -232,8 +232,27 @@ sample.table <- table(data.v2$sample_type)
 
 ## Assay Manufacturer
 manufac.table <- data.v2 %>%
-                  group_by(eval_field) %>%
+                  group_by(eval_field) %>% 
+  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC",
+                            ifelse(assay_manufact == "Sedia", "Sedia",
+                            ifelse(assay_manufact == "Maxim", "Maxim",
+                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
+                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
+                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
+                                   assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
+                            ifelse(assay_manufact == "Other: Sedia or Maxim", "Sedia or Maxim",
+                            "NA")))))))) %>%
                   count(assay_manufact)
+
+ggplot(data = manufac.table, aes(x = reorder(assay_manufact, n), 
+                                  y = n,
+                                  fill = eval_field)) +
+  geom_bar(stat = "identity", position = "dodge", size = 0) +
+  labs(title = "Number of studies using specific CDC-approved LAg manufacturing kits",
+       x = "Assay manufacturer", y = "Count (n)") +
+  scale_fill_discrete(name = "Assay manufacturer") +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
 
 ## Sub-geographic region where samples were collected from
 
@@ -258,12 +277,12 @@ region.sum <- regions %>% group_by(eval_field) %>%
 
 ### Reorganize table and plot
 gathered.region <- region.sum %>% 
-  gather(key = "sub_geo", value = "count", 2:19)
+  gather(key = "sub_geo", value = "n", 2:19)
 
-ggplot(data = gathered.region, aes(x = reorder(sub_geo, count), 
-                                        y = count, 
+ggplot(data = gathered.region, aes(x = reorder(sub_geo, n), 
+                                        y = n, 
                                         fill = eval_field)) +
-  geom_bar(stat = "identity", position = "dodge", col = "white") +  
+  geom_bar(stat = "identity", position = "dodge", size = 0) +  
   labs(title = "Number of studies where samples were collected to conduct LAg studies",
        x = "Sub-Geographic Region", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
@@ -337,7 +356,7 @@ subtype.table <- as.data.frame(table(gathered.subtype.v2))
 ggplot(data = subtype.table, aes(x = reorder(subtype, Freq), 
                                    y = Freq, 
                                    fill = eval_field)) +
-  geom_bar(stat = "identity", position = "dodge", col = "white") +  
+  geom_bar(stat = "identity", position = "dodge", size = 0) +  
   labs(title = "Number of studies based on HIV-1 subtypes",
        x = "HIV-1 Subtypes", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
@@ -418,14 +437,14 @@ mdri.sum <- mdri.table %>% group_by(assay_manufact, subtype) %>%
             mdri_vl_other = sum(mdri_vl_other), mdri_algorithm_other = sum(mdri_algorithm_other))
 
 ### Gather the df and filter out rows without any mdri threshold/algorithm counts
-mdri.sum.gather <- mdri.sum %>% gather("mdri_threshold", "count", 3:11) %>% 
-  as.data.frame(table()) %>% filter(count != 0)
+mdri.sum.gather <- mdri.sum %>% gather("mdri_threshold", "n", 3:11) %>% 
+  as.data.frame(table()) %>% filter(n != 0)
 
 ### Plot the mdri df
 ggplot(data = mdri.sum.gather, aes(x = mdri_threshold, 
-                                   y = count,
+                                   y = n,
                                    fill = assay_manufact)) +
-  geom_bar(stat = "identity", position = "dodge", col = "white") +
+  geom_bar(stat = "identity", position = "dodge", size = 0) +
   facet_wrap(~ subtype, ncol = 2) +  
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating MDRI 
        based on assay manufacturer and HIV-1 subtype",
@@ -517,14 +536,14 @@ frr.sum <- frr.table %>% group_by(assay_manufact, subtype) %>%
             frr_vl_other = sum(frr_vl_other), frr_algorithm_other = sum(frr_algorithm_other))
 
 ### Gather the df and filter out rows without any frr threshold/algorithm counts
-frr.sum.gather <- frr.sum %>% gather("frr_threshold", "count", 3:11) %>% 
-  as.data.frame(table()) %>% filter(count != 0)
+frr.sum.gather <- frr.sum %>% gather("frr_threshold", "n", 3:11) %>% 
+  as.data.frame(table()) %>% filter(n != 0)
 
 ### Plot the frr df
 ggplot(data = frr.sum.gather, aes(x = frr_threshold, 
-                                   y = count,
+                                   y = n,
                                    fill = assay_manufact)) +
-  geom_bar(stat = "identity", position = "dodge", col = "white") +
+  geom_bar(stat = "identity", position = "dodge", size = 0) +
   facet_wrap(~ subtype, ncol = 2) +  
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating frr 
        based on assay manufacturer and HIV-1 subtype",
