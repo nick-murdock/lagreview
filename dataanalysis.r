@@ -1,11 +1,9 @@
 # THIS FILE IS FOR ALL DATA ANALYSIS PORTIONS OF THE COVIDENCE REVIEW
 
 ##############################################################################
-# List of analysis and plots to complete from MPH capstone                  
+# List of analysis and plots to complete           
 # Tables and plots should be grouped by evaluation or field use when appropriate
-# - Assay manufacturer plot grouped by eval or field use 
-#   - also need to group manufacturers the same as the mdri plot
-# - any other tables and plots you think may be interesting or important     
+# - Other tables and plots you think may be interesting or important     
 ##############################################################################
 
 # Load packages
