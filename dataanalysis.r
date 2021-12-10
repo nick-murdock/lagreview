@@ -443,3 +443,102 @@ ggplot(data = mdri.sum.gather, aes(x = mdri_threshold,
                                  "mdri_algorithm_other" = "Other algorithm")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
+
+## FRR
+
+### Checking mdri, frr, assay manufacturer variables have expected responses
+str(data.v2[,21:38])
+str(data.v2[,13:16])
+data.v2 %>% count(assay_manufact)
+table(data.v2$assay_manufact, data.v2$eval_field)
+
+### Keep only relevant variables and filter for only evaluation studies
+frr <- data.v2 %>% group_by(assay_manufact) %>%
+  select(assay_manufact, eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5, 
+         frr_1, frr_1_5, frr_2, frr_other, frr_1_vl_1000, frr_1_5_vl_1000, frr_2_vl_1000,
+         frr_vl_other, frr_algorithm_other) %>%
+  filter(eval_field == "Evaluation")
+
+### Gather the frr df, Relabel same subtypes together, and remove missings
+gathered.frr <- frr %>% gather("column", "subtype", 3:7) %>% as.data.frame(table())
+str(gathered.frr)
+gathered.frr$subtype <- as.factor(gathered.frr$subtype)
+
+gathered.frr.v2 <- gathered.frr %>% 
+  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
+                              (!(is.na(subtype) | subtype == "")), "A", 
+                     ifelse(subtype == "A & D" & 
+                              (!(is.na(subtype) | subtype == "")), "A & D",
+                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
+                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
+                     ifelse(subtype == "B" &
+                              (!(is.na(subtype) | subtype == "")), "B",
+                     ifelse(subtype == "C" &
+                              (!(is.na(subtype) | subtype == "")), "C",
+                     ifelse(subtype == "C/BC" &
+                              (!(is.na(subtype) | subtype == "")), "C/BC",
+                     ifelse(subtype == "CRF35_AD" &
+                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
+                     ifelse(subtype == "D" &
+                              (!(is.na(subtype) | subtype == "")), "D",
+                     ifelse(subtype == "Multiple" &
+                              (!(is.na(subtype) | subtype == "")), "Multiple",
+                     ifelse(subtype == "Non-B" &
+                              (!(is.na(subtype) | subtype == "")), "Non-B",
+                     ifelse(subtype == "Not defined" &
+                              (!(is.na(subtype) | subtype == "")), "Not defined",
+                      "NA")))))))))))) %>%
+  filter(subtype != "NA")
+
+table(gathered.frr.v2$subtype)
+table(gathered.frr.v2$assay_manufact, gathered.frr.v2$eval_field)
+
+### Relabel same assay manufacturer variables
+gathered.frr.v2 <- gathered.frr.v2 %>% 
+  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC", 
+                            ifelse(assay_manufact == "Sedia", "Sedia",
+                            ifelse(assay_manufact == "Maxim", "Maxim",
+                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
+                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
+                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
+                                   assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
+                            "NA")))))))
+
+### Create new df with assay manufacturer, subtype, and frr thresholds/algorithms
+frr.table <- gathered.frr.v2 %>% group_by(subtype) %>%
+  select(assay_manufact, subtype, frr_1, frr_1_5, frr_2, frr_other, 
+         frr_1_vl_1000, frr_1_5_vl_1000, frr_2_vl_1000,
+         frr_vl_other, frr_algorithm_other)
+
+### Group by assay manufacturer and subtype, then sum by each frr threshold/algorithm
+frr.sum <- frr.table %>% group_by(assay_manufact, subtype) %>%
+  summarize(frr_1 = sum(frr_1), frr_1_5 = sum(frr_1_5), frr_2 = sum(frr_2), 
+            frr_other = sum(frr_other), frr_1_vl_1000 = sum(frr_1_vl_1000), 
+            frr_1_5_vl_1000 = sum(frr_1_5_vl_1000), frr_2_vl_1000 = sum(frr_2_vl_1000), 
+            frr_vl_other = sum(frr_vl_other), frr_algorithm_other = sum(frr_algorithm_other))
+
+### Gather the df and filter out rows without any frr threshold/algorithm counts
+frr.sum.gather <- frr.sum %>% gather("frr_threshold", "count", 3:11) %>% 
+  as.data.frame(table()) %>% filter(count != 0)
+
+### Plot the frr df
+ggplot(data = frr.sum.gather, aes(x = frr_threshold, 
+                                   y = count,
+                                   fill = assay_manufact)) +
+  geom_bar(stat = "identity", position = "dodge", col = "white") +
+  facet_wrap(~ subtype, ncol = 2) +  
+  labs(title = "Number of LAg algorithms and thresholds evaluated for estimating frr 
+       based on assay manufacturer and HIV-1 subtype",
+       x = "frr thresholds and algorithms", y = "Count (n)") +
+  scale_fill_discrete(name = "Assay manufacturer") +
+  scale_x_discrete(labels = c("frr_1" = "ODn < 1",
+                              "frr_1_5" = "ODn < 1.5",
+                              "frr_2" = "ODn < 2",
+                              "frr_other" = "Other ODn",
+                              "frr_1_vl_1000" = "ODn < 1 + VL < 1000",
+                              "frr_1_5_vl_1000" = "ODn < 1.5 + VL < 1000",
+                              "frr_2_vl_1000" = "ODn < 2 + VL < 1000",
+                              "frr_vl_other" = "Other ODn + VL",
+                              "frr_algorithm_other" = "Other algorithm")) +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
