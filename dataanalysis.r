@@ -568,3 +568,11 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
                                "Sedia vs. Maxim" = "tomato")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
+
+## LAg studies that compared against traditional HIV incidence measurements
+table(data.v2$study_purpose)
+incidence_comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>% 
+  filter(grepl(pattern = "Comparison", x = study_purpose))
+
+incidence_comparison$study_purpose <- gsub(pattern = "\n", replacement = "", 
+                                           x = incidence_comparison$study_purpose)
