@@ -203,7 +203,126 @@ data.v2 <- data.v2 %>%
                             "NA"))))))))
 table(data.v2$assay_manufact)
 
-# Test Analyses 
+## Rename and group similar subtypes for each subtype column
+### NOTE: Grouped subtypes A and A1 (A1 is a sub-subtype)
+data.v2 <- data.v2 %>% 
+  mutate("subtype_1" = ifelse(subtype_1 == "A" | subtype_1 == "A1" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "A", 
+                       ifelse(subtype_1 == "A & D" & 
+                            (!(is.na(subtype_1) | subtype_1 == "")), "A & D",
+                       ifelse(subtype_1 == "AE" | subtype_1 == "CRF01_AE" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "CRF01_AE",
+                       ifelse(subtype_1 == "B" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "B",
+                       ifelse(subtype_1 == "C" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "C",
+                       ifelse(subtype_1 == "C/BC" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "C/BC",
+                       ifelse(subtype_1 == "CRF35_AD" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "CRF35_AD",
+                       ifelse(subtype_1 == "D" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "D",
+                       ifelse(subtype_1 == "Multiple" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "Multiple",
+                       ifelse(subtype_1 == "Non-B" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "Non-B",
+                       ifelse(subtype_1 == "Not defined" &
+                            (!(is.na(subtype_1) | subtype_1 == "")), "Not defined",
+                       "NA")))))))))))) %>% 
+  mutate("subtype_2" = ifelse(subtype_2 == "A" | subtype_2 == "A1" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "A", 
+                       ifelse(subtype_2 == "A & D" & 
+                                (!(is.na(subtype_2) | subtype_2 == "")), "A & D",
+                       ifelse(subtype_2 == "AE" | subtype_2 == "CRF01_AE" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "CRF01_AE",
+                       ifelse(subtype_2 == "B" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "B",
+                       ifelse(subtype_2 == "C" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "C",
+                       ifelse(subtype_2 == "C/BC" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "C/BC",
+                       ifelse(subtype_2 == "CRF35_AD" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "CRF35_AD",
+                       ifelse(subtype_2 == "D" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "D",
+                       ifelse(subtype_2 == "Multiple" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "Multiple",
+                       ifelse(subtype_2 == "Non-B" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "Non-B",
+                       ifelse(subtype_2 == "Not defined" &
+                                (!(is.na(subtype_2) | subtype_2 == "")), "Not defined",
+                       "NA")))))))))))) %>% 
+  mutate("subtype_3" = ifelse(subtype_3 == "A" | subtype_3 == "A1" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "A", 
+                       ifelse(subtype_3 == "A & D" & 
+                                (!(is.na(subtype_3) | subtype_3 == "")), "A & D",
+                       ifelse(subtype_3 == "AE" | subtype_3 == "CRF01_AE" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "CRF01_AE",
+                       ifelse(subtype_3 == "B" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "B",
+                       ifelse(subtype_3 == "C" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "C",
+                       ifelse(subtype_3 == "C/BC" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "C/BC",
+                       ifelse(subtype_3 == "CRF35_AD" &
+                                 (!(is.na(subtype_3) | subtype_3 == "")), "CRF35_AD",
+                       ifelse(subtype_3 == "D" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "D",
+                       ifelse(subtype_3 == "Multiple" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "Multiple",
+                       ifelse(subtype_3 == "Non-B" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "Non-B",
+                       ifelse(subtype_3 == "Not defined" &
+                                (!(is.na(subtype_3) | subtype_3 == "")), "Not defined",
+                       "NA")))))))))))) %>% 
+  mutate("subtype_4" = ifelse(subtype_4 == "A" | subtype_4 == "A1" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "A", 
+                       ifelse(subtype_4 == "A & D" & 
+                                (!(is.na(subtype_4) | subtype_4 == "")), "A & D",
+                       ifelse(subtype_4 == "AE" | subtype_4 == "CRF01_AE" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "CRF01_AE",
+                       ifelse(subtype_4 == "B" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "B",
+                       ifelse(subtype_4 == "C" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "C",
+                       ifelse(subtype_4 == "C/BC" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "C/BC",
+                       ifelse(subtype_4 == "CRF35_AD" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "CRF35_AD",
+                       ifelse(subtype_4 == "D" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "D",
+                       ifelse(subtype_4 == "Multiple" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "Multiple",
+                       ifelse(subtype_4 == "Non-B" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "Non-B",
+                       ifelse(subtype_4 == "Not defined" &
+                                (!(is.na(subtype_4) | subtype_4 == "")), "Not defined",
+                       "NA")))))))))))) %>% 
+  mutate("subtype_5" = ifelse(subtype_5 == "A" | subtype_5 == "A1" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "A", 
+                       ifelse(subtype_5 == "A & D" & 
+                                (!(is.na(subtype_5) | subtype_5 == "")), "A & D",
+                       ifelse(subtype_5 == "AE" | subtype_5 == "CRF01_AE" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "CRF01_AE",
+                       ifelse(subtype_5 == "B" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "B",
+                       ifelse(subtype_5 == "C" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "C",
+                       ifelse(subtype_5 == "C/BC" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "C/BC",
+                       ifelse(subtype_5 == "CRF35_AD" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "CRF35_AD",
+                       ifelse(subtype_5 == "D" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "D",
+                       ifelse(subtype_5 == "Multiple" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "Multiple",
+                       ifelse(subtype_5 == "Non-B" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "Non-B",
+                       ifelse(subtype_5 == "Not defined" &
+                                (!(is.na(subtype_5) | subtype_5 == "")), "Not defined",
+                       "NA"))))))))))))
+
+# Test Analyses
 hist(data.v2$year)
 data.v2 %>% group_by(eval_field) %>%
   count()
@@ -244,15 +363,6 @@ sample.table <- table(data.v2$sample_type)
 ## Assay Manufacturer
 manufac.table <- data.v2 %>%
                   group_by(eval_field) %>% 
-  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC",
-                            ifelse(assay_manufact == "Sedia", "Sedia",
-                            ifelse(assay_manufact == "Maxim", "Maxim",
-                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
-                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
-                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
-                                   assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
-                            ifelse(assay_manufact == "Other: Sedia or Maxim", "Sedia or Maxim",
-                            "NA")))))))) %>%
                   count(assay_manufact)
 
 ggplot(data = manufac.table, aes(x = reorder(assay_manufact, n), 
@@ -324,7 +434,7 @@ ggplot(data = gathered.region, aes(x = reorder(sub_geo, n),
 subtype <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
-### Reorganize df, relabel same subtypes together that were entered differently, remove missings
+### Reorganize df for subtype data, remove missings, and plot
 gathered.subtype <- subtype %>% gather("column", "subtype", 2:6) %>% as.data.frame(table())
 
 str(gathered.subtype)
@@ -334,29 +444,6 @@ gathered.subtype$subtype <- as.factor(gathered.subtype$subtype)
 table(gathered.subtype$subtype)
 
 gathered.subtype.v2 <- gathered.subtype %>% 
-  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
-                              (!(is.na(subtype) | subtype == "")), "A", 
-                     ifelse(subtype == "A & D" & 
-                              (!(is.na(subtype) | subtype == "")), "A & D",
-                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
-                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
-                     ifelse(subtype == "B" &
-                              (!(is.na(subtype) | subtype == "")), "B",
-                     ifelse(subtype == "C" &
-                              (!(is.na(subtype) | subtype == "")), "C",
-                     ifelse(subtype == "C/BC" &
-                              (!(is.na(subtype) | subtype == "")), "C/BC",
-                     ifelse(subtype == "CRF35_AD" &
-                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
-                     ifelse(subtype == "D" &
-                              (!(is.na(subtype) | subtype == "")), "D",
-                     ifelse(subtype == "Multiple" &
-                              (!(is.na(subtype) | subtype == "")), "Multiple",
-                     ifelse(subtype == "Non-B" &
-                              (!(is.na(subtype) | subtype == "")), "Non-B",
-                     ifelse(subtype == "Not defined" &
-                             (!(is.na(subtype) | subtype == "")), "Not defined",
-                     "NA")))))))))))) %>%
   filter(subtype != "NA")
 
 gathered.subtype.v2 <- gathered.subtype.v2 %>% group_by(eval_field) %>%
@@ -389,53 +476,19 @@ mdri <- data.v2 %>% group_by(assay_manufact) %>%
          mdri_vl_other, mdri_algorithm_other) %>%
   filter(eval_field == "Evaluation")
 
-### Gather the mdri df, Relabel same subtypes together, and remove missings
+### Gather the mdri df and remove missings
 gathered.mdri <- mdri %>% gather("column", "subtype", 3:7) %>% as.data.frame(table())
 str(gathered.mdri)
 gathered.mdri$subtype <- as.factor(gathered.mdri$subtype)
 
-gathered.mdri.v2 <- gathered.mdri %>% 
-  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
-                              (!(is.na(subtype) | subtype == "")), "A", 
-                     ifelse(subtype == "A & D" & 
-                              (!(is.na(subtype) | subtype == "")), "A & D",
-                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
-                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
-                     ifelse(subtype == "B" &
-                              (!(is.na(subtype) | subtype == "")), "B",
-                     ifelse(subtype == "C" &
-                              (!(is.na(subtype) | subtype == "")), "C",
-                     ifelse(subtype == "C/BC" &
-                              (!(is.na(subtype) | subtype == "")), "C/BC",
-                     ifelse(subtype == "CRF35_AD" &
-                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
-                     ifelse(subtype == "D" &
-                              (!(is.na(subtype) | subtype == "")), "D",
-                     ifelse(subtype == "Multiple" &
-                              (!(is.na(subtype) | subtype == "")), "Multiple",
-                     ifelse(subtype == "Non-B" &
-                              (!(is.na(subtype) | subtype == "")), "Non-B",
-                     ifelse(subtype == "Not defined" &
-                              (!(is.na(subtype) | subtype == "")), "Not defined",
-                     "NA")))))))))))) %>%
+gathered.mdri <- gathered.mdri %>% 
   filter(subtype != "NA")
 
-table(gathered.mdri.v2$subtype)
-table(gathered.mdri.v2$assay_manufact, gathered.mdri.v2$eval_field)
-
-### Relabel same assay manufacturer variables
-gathered.mdri.v2 <- gathered.mdri.v2 %>% 
-  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC", 
-                            ifelse(assay_manufact == "Sedia", "Sedia",
-                            ifelse(assay_manufact == "Maxim", "Maxim",
-                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
-                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
-                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
-                                     assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
-                            "NA")))))))
+table(gathered.mdri$subtype)
+table(gathered.mdri$assay_manufact, gathered.mdri$eval_field)
 
 ### Create new df with assay manufacturer, subtype, and MDRI thresholds/algorithms
-mdri.table <- gathered.mdri.v2 %>% group_by(subtype) %>%
+mdri.table <- gathered.mdri %>% group_by(subtype) %>%
   select(assay_manufact, subtype, mdri_1, mdri_1_5, mdri_2, mdri_other, 
          mdri_1_vl_1000, mdri_1_5_vl_1000, mdri_2_vl_1000,
          mdri_vl_other, mdri_algorithm_other)
@@ -493,50 +546,16 @@ frr <- data.v2 %>% group_by(assay_manufact) %>%
          frr_vl_other, frr_algorithm_other) %>%
   filter(eval_field == "Evaluation")
 
-### Gather the frr df, Relabel same subtypes together, and remove missings
+### Gather the frr df and remove missings
 gathered.frr <- frr %>% gather("column", "subtype", 3:7) %>% as.data.frame(table())
 str(gathered.frr)
 gathered.frr$subtype <- as.factor(gathered.frr$subtype)
 
 gathered.frr.v2 <- gathered.frr %>% 
-  mutate("subtype" = ifelse(subtype == "A" | subtype == "A1" &
-                              (!(is.na(subtype) | subtype == "")), "A", 
-                     ifelse(subtype == "A & D" & 
-                              (!(is.na(subtype) | subtype == "")), "A & D",
-                     ifelse(subtype == "AE" | subtype == "CRF01_AE" &
-                              (!(is.na(subtype) | subtype == "")), "CRF01_AE",
-                     ifelse(subtype == "B" &
-                              (!(is.na(subtype) | subtype == "")), "B",
-                     ifelse(subtype == "C" &
-                              (!(is.na(subtype) | subtype == "")), "C",
-                     ifelse(subtype == "C/BC" &
-                              (!(is.na(subtype) | subtype == "")), "C/BC",
-                     ifelse(subtype == "CRF35_AD" &
-                              (!(is.na(subtype) | subtype == "")), "CRF35_AD",
-                     ifelse(subtype == "D" &
-                              (!(is.na(subtype) | subtype == "")), "D",
-                     ifelse(subtype == "Multiple" &
-                              (!(is.na(subtype) | subtype == "")), "Multiple",
-                     ifelse(subtype == "Non-B" &
-                              (!(is.na(subtype) | subtype == "")), "Non-B",
-                     ifelse(subtype == "Not defined" &
-                              (!(is.na(subtype) | subtype == "")), "Not defined",
-                      "NA")))))))))))) %>%
   filter(subtype != "NA")
 
 table(gathered.frr.v2$subtype)
 table(gathered.frr.v2$assay_manufact, gathered.frr.v2$eval_field)
-
-### Relabel same assay manufacturer variables
-gathered.frr.v2 <- gathered.frr.v2 %>% 
-  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC", 
-                            ifelse(assay_manufact == "Sedia", "Sedia",
-                            ifelse(assay_manufact == "Maxim", "Maxim",
-                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
-                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
-                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
-                                   assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
-                            "NA")))))))
 
 ### Create new df with assay manufacturer, subtype, and frr thresholds/algorithms
 frr.table <- gathered.frr.v2 %>% group_by(subtype) %>%
