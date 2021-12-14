@@ -358,7 +358,23 @@ population.table <- table(data.v2$pop_descript)
 cohort.table <- table(data.v2$cohort_descript)
 
 ## Sample Type
-sample.table <- table(data.v2$sample_type)
+sample.table <- data.v2 %>%
+  group_by(eval_field) %>% count(sample_type)
+
+ggplot(data = sample.table, aes(x = reorder(sample_type, n), 
+                                 y = n,
+                                 fill = eval_field)) +
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +
+  labs(title = "Number of studies by sample type",
+       x = "Sample type", y = "Count (n)") +
+  scale_fill_discrete(name = "Assay manufacturer") +
+  scale_x_discrete(labels = c("Dried blood spot only" = "DBS",
+                              "Plasma/serum and/or dried blood spot" = "Plasma/serum and/or DBS",
+                              "Matched plasma/serum and dried blood spot" = "Matched plasma/serum and DBS",
+                              "Plasma/serum only" = "Plasma/serum",
+                              "Other: Not defined" = "Not defined")) +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
 
 ## Assay Manufacturer
 manufac.table <- data.v2 %>%
@@ -368,7 +384,7 @@ manufac.table <- data.v2 %>%
 ggplot(data = manufac.table, aes(x = reorder(assay_manufact, n), 
                                   y = n,
                                   fill = eval_field)) +
-  geom_bar(stat = "identity", position = "dodge", size = 0) +
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +
   labs(title = "Number of studies using specific CDC-approved LAg manufacturing kits",
        x = "Assay manufacturer", y = "Count (n)") +
   scale_fill_discrete(name = "Assay manufacturer") +
@@ -403,7 +419,7 @@ gathered.region <- region.sum %>%
 ggplot(data = gathered.region, aes(x = reorder(sub_geo, n), 
                                         y = n, 
                                         fill = eval_field)) +
-  geom_bar(stat = "identity", position = "dodge", size = 0) +  
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
   labs(title = "Number of studies where samples were collected to conduct LAg studies",
        x = "Sub-Geographic Region", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
@@ -454,7 +470,7 @@ subtype.table <- as.data.frame(table(gathered.subtype.v2))
 ggplot(data = subtype.table, aes(x = reorder(subtype, Freq), 
                                    y = Freq, 
                                    fill = eval_field)) +
-  geom_bar(stat = "identity", position = "dodge", size = 0) +  
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
   labs(title = "Number of studies based on HIV-1 subtypes",
        x = "HIV-1 Subtypes", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
@@ -601,10 +617,10 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
-## LAg studies that compared against traditional HIV incidence measurements
+## LAg studies that compared against traditional/other HIV incidence measurements
 table(data.v2$study_purpose)
-incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>% 
-  filter(grepl(pattern = "Comparison", x = study_purpose))
+incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) #%>% 
+#  filter(grepl(pattern = "Comparison", x = study_purpose))
 
 incidence.comparison$study_purpose <- gsub(pattern = "\n", replacement = "", 
                                            x = incidence.comparison$study_purpose)
