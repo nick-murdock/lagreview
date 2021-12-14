@@ -442,7 +442,7 @@ mdri.sum.gather <- mdri.sum %>% gather("mdri_threshold", "n", 3:11) %>%
 ggplot(data = mdri.sum.gather, aes(x = mdri_threshold, 
                                    y = n,
                                    fill = assay_manufact)) +
-  geom_bar(stat = "identity", position = "dodge", size = 0) +
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +
   facet_wrap(~ subtype, ncol = 2) +  
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating MDRI 
        based on assay manufacturer and HIV-1 subtype",
@@ -546,7 +546,7 @@ frr.sum.gather <- frr.sum %>% gather("frr_threshold", "n", 3:11) %>%
 ggplot(data = frr.sum.gather, aes(x = frr_threshold, 
                                    y = n,
                                    fill = assay_manufact)) +
-  geom_bar(stat = "identity", position = "dodge", size = 0) +
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +
   facet_wrap(~ subtype, ncol = 2) +  
   labs(title = "Number of LAg algorithms and thresholds evaluated for estimating frr 
        based on assay manufacturer and HIV-1 subtype",
