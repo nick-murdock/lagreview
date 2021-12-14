@@ -190,6 +190,19 @@ data.v2 <- data.v2 %>%
   mutate("frr_algorithm_other" = ifelse(frr_algorithm_other == "Yes" & 
                                            !is.na(frr_algorithm_other), 1, 0)) 
 
+## Rename assay manufacturer variables and group similar ones together
+data.v2 <- data.v2 %>%
+  mutate("assay_manufact" = ifelse(assay_manufact == "CDC", "CDC",
+                            ifelse(assay_manufact == "Sedia", "Sedia",
+                            ifelse(assay_manufact == "Maxim", "Maxim",
+                            ifelse(assay_manufact == "Other: Not defined", "Not defined",
+                            ifelse(assay_manufact == "Sedia vs. Maxim", "Sedia vs. Maxim",
+                            ifelse(assay_manufact == "Other: Sedia (serum/plasma) and Maxim (DBS)" |
+                                   assay_manufact == "Other: Sedia and Maxim", "Sedia and Maxim",
+                            ifelse(assay_manufact == "Other: Sedia or Maxim", "Sedia or Maxim",
+                            "NA"))))))))
+table(data.v2$assay_manufact)
+
 # Test Analyses 
 hist(data.v2$year)
 data.v2 %>% group_by(eval_field) %>%
