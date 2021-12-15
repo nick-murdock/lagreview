@@ -140,16 +140,9 @@ data.v2 %>% count(micronesia)
 
 data.v2 %>% count(polynesia)
 
-## Cleaning up subtype_1 fields where it was blank instead of not defined
-## All rows in subtype_1 column should have a value
-data.v2 %>% count(subtype_1)
-data.v2 %>% count(subtype_2)
-data.v2 %>% count(subtype_3)
-data.v2 %>% count(subtype_4)
-data.v2 %>% count(subtype_5)
-data.v2$subtype_1[(data.v2$subtype_1 == "")]<- "Not defined"
-
-data.v2 %>% count(subtype_1)
+## Get rid of \n in study purposes -- likely from hitting 'enter' key during covidance
+data.v2$study_purpose <- gsub(pattern = "\n", replacement = "", 
+                                           x = data.v2$study_purpose)
 
 ## Make mdri and frr variables into yes (1) or no (0)
 data.v2 <- data.v2 %>% 
@@ -202,6 +195,17 @@ data.v2 <- data.v2 %>%
                             ifelse(assay_manufact == "Other: Sedia or Maxim", "Sedia or Maxim",
                             "NA"))))))))
 table(data.v2$assay_manufact)
+
+## Cleaning up subtype_1 fields where it was blank instead of not defined
+## All rows in subtype_1 column should have a value
+data.v2 %>% count(subtype_1)
+data.v2 %>% count(subtype_2)
+data.v2 %>% count(subtype_3)
+data.v2 %>% count(subtype_4)
+data.v2 %>% count(subtype_5)
+data.v2$subtype_1[(data.v2$subtype_1 == "")]<- "Not defined"
+
+data.v2 %>% count(subtype_1)
 
 ## Rename and group similar subtypes for each subtype column
 ### NOTE: Grouped subtypes A and A1 (A1 is a sub-subtype)
@@ -623,6 +627,4 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
   filter(!grepl(pattern = "ICAP", x = journal)) #%>% 
 #  filter(grepl(pattern = "Comparison", x = study_purpose))
 
-incidence.comparison$study_purpose <- gsub(pattern = "\n", replacement = "", 
-                                           x = incidence.comparison$study_purpose)
 table(incidence.comparison$study_purpose)
