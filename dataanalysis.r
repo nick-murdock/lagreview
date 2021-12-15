@@ -621,10 +621,13 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
-## LAg studies that compared against traditional/other HIV incidence measurements
+## LAg studies that compared against traditional HIV incidence measurements
 table(data.v2$study_purpose)
 incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>%
   filter(!grepl(pattern = "ICAP", x = journal)) #%>% 
 #  filter(grepl(pattern = "Comparison", x = study_purpose))
-
+### Note to self on studies to not include that do not meet the above mentioned purposes:
+### Conan, Custer, de Oliveira Garcia Mateos, Gonese, Grebe (both), Hansoti, Hines, Huerga, Kim (both), 
+### Kirkpatrick, Low,
+###
 table(incidence.comparison$study_purpose)
