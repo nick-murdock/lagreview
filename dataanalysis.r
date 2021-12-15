@@ -619,7 +619,8 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
 
 ## LAg studies that compared against traditional/other HIV incidence measurements
 table(data.v2$study_purpose)
-incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) #%>% 
+incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>%
+  filter(!grepl(pattern = "ICAP", x = journal)) #%>% 
 #  filter(grepl(pattern = "Comparison", x = study_purpose))
 
 incidence.comparison$study_purpose <- gsub(pattern = "\n", replacement = "", 
