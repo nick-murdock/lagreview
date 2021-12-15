@@ -628,6 +628,6 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
 #  filter(grepl(pattern = "Comparison", x = study_purpose))
 ### Note to self on studies to not include that do not meet the above mentioned purposes:
 ### Conan, Custer, de Oliveira Garcia Mateos, Gonese, Grebe (both), Hansoti, Hines, Huerga, Kim (both), 
-### Kirkpatrick, Low,
+### Kirkpatrick, Low, Lunar, Maman (both), Mehta, 
 ###
 table(incidence.comparison$study_purpose)
