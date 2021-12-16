@@ -627,7 +627,7 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
   filter(!grepl(pattern = "ICAP", x = journal)) #%>% 
 #  filter(grepl(pattern = "Comparison", x = study_purpose))
 ### Note to self on studies to not include that do not meet the above mentioned purposes:
-### Conan, Custer, de Oliveira Garcia Mateos, Gonese, Grebe (both), Hansoti, Hines, Huerga, Kim (both), 
-### Kirkpatrick, Low, Lunar, Maman (both), Mehta, 
-###
+### Conan, Custer, de Oliveira Garcia Mateos, Gonese, Grebe (2), Hansoti, Hines, Huerga, Kim (2), 
+### Kirkpatrick, Low, Lunar, Maman (2), Mehta, Moyo(3), Negedu-Momoh, Nikolopoulus, Payne, Rehle.
+### Sabino, Shi, Simmons, Solomon, Soodla, Szwarcwald, Tang, Teixeira, Vermeulen (ISBT 2018), Woldesenbet
 table(incidence.comparison$study_purpose)
