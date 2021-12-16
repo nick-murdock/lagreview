@@ -624,10 +624,64 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
 ## LAg studies that compared against traditional HIV incidence measurements
 table(data.v2$study_purpose)
 incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>%
-  filter(!grepl(pattern = "ICAP", x = journal)) #%>% 
-#  filter(grepl(pattern = "Comparison", x = study_purpose))
+  filter(!grepl(pattern = "ICAP", x = journal)) %>% 
 ### Note to self on studies to not include that do not meet the above mentioned purposes:
 ### Conan, Custer, de Oliveira Garcia Mateos, Gonese, Grebe (2), Hansoti, Hines, Huerga, Kim (2), 
 ### Kirkpatrick, Low, Lunar, Maman (2), Mehta, Moyo(3), Negedu-Momoh, Nikolopoulus, Payne, Rehle.
 ### Sabino, Shi, Simmons, Solomon, Soodla, Szwarcwald, Tang, Teixeira, Vermeulen (ISBT 2018), Woldesenbet
-table(incidence.comparison$study_purpose)
+  filter(author_last_name == "Cousins" | 
+           author_last_name == "Duong" | 
+           author_last_name == "Klock" | 
+           author_last_name == "Konikoff" |
+           author_last_name == "Laeyendecker" | 
+           author_last_name == "Vermeulen" & year == 2021)
+
+incidence.comparison.reg <- incidence.comparison %>% 
+  select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
+         northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
+         eastern_europe, northern_europe, southern_europe, western_europe, australia_new_zealand, melanesia,
+         micronesia, polynesia) 
+
+### Count the number of specific region per evaluation or field use study
+incidence.comparison.reg.sum <- incidence.comparison.reg  %>% 
+  summarize(unknown = sum(unknown),northern_africa = sum(northern_africa), 
+            sub_saharan_africa = sum(sub_saharan_africa), latin_america_caribbean = sum(latin_america_caribbean),
+            northern_america = sum(northern_america), central_asia = sum(central_asia), 
+            eastern_asia = sum(eastern_asia), south_eastern_asia = sum(south_eastern_asia), 
+            southern_asia = sum(southern_asia), western_asia = sum(western_asia),
+            eastern_europe = sum(eastern_europe), northern_europe = sum(northern_europe), 
+            southern_europe = sum(southern_europe), western_europe = sum(western_europe),
+            australia_new_zealand = sum(australia_new_zealand), melanesia = sum(melanesia),
+            micronesia = sum(micronesia), polynesia = sum(polynesia))
+
+### Reorganize table and plot
+gathered.inc.reg.sum <- incidence.comparison.reg.sum %>% 
+  gather(key = "sub_geo", value = "n", 1:18)
+
+ggplot(data = gathered.inc.reg.sum, aes(x = reorder(sub_geo, n), 
+                                   y = n)) +
+  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
+  labs(title = "Number of studies where samples were collected to conduct LAg studies",
+       x = "Sub-Geographic Region", y = "Count (n)") +
+  scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
+  scale_x_discrete(labels = c("australia_new_zealand" = "Australia & New Zealand",
+                              "central_asia" = "Central Asia",
+                              "eastern_asia" = "Eastern Asia",
+                              "eastern_europe" = "Eastern Europe",
+                              "latin_america_caribbean" = "Latin American & Caribbean",
+                              "melanesia" = "Melanesia",
+                              "micronesia" = "Micronesia",
+                              "northern_africa" = "Northern Africa",
+                              "northern_america" = "Northern America",
+                              "northern_europe" = "Northern Europe",
+                              "polynesia" = "Polynesia",
+                              "south_eastern_asia" = "South Eastern Asia",
+                              "southern_asia" = "Southern Asia",
+                              "southern_europe" = "Southern Europe",
+                              "sub_saharan_africa" = "Sub-Saharan Africa",
+                              "unknown" = "Unknown",
+                              "western_asia" = "Western Asia",
+                              "western_europe" = "Western Europe")) +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
+        plot.title = element_text(hjust = 0.5))
+
