@@ -144,6 +144,12 @@ data.v2 %>% count(polynesia)
 data.v2$study_purpose <- gsub(pattern = "\n", replacement = "", 
                                            x = data.v2$study_purpose)
 
+data.v2$pop_descript <- gsub(pattern = "\n", replacement = "", 
+                              x = data.v2$pop_descript)
+
+data.v2$cohort_descript <- gsub(pattern = "\n", replacement = "", 
+                              x = data.v2$cohort_descript)
+
 ## Make mdri and frr variables into yes (1) or no (0)
 data.v2 <- data.v2 %>% 
   mutate("mdri_1" = ifelse(mdri_1 == "Yes" &
@@ -636,13 +642,17 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
            author_last_name == "Laeyendecker" | 
            author_last_name == "Vermeulen" & year == 2021)
 
+table(incidence.comparison$pop_descript)
+table(incidence.comparison$cohort_descript)
+
+### Create new df for region that compared LAg and obs incidence
 incidence.comparison.reg <- incidence.comparison %>% 
   select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
          northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
          eastern_europe, northern_europe, southern_europe, western_europe, australia_new_zealand, melanesia,
          micronesia, polynesia) 
 
-### Count the number of specific region per evaluation or field use study
+### Count the number of specific region
 incidence.comparison.reg.sum <- incidence.comparison.reg  %>% 
   summarize(unknown = sum(unknown),northern_africa = sum(northern_africa), 
             sub_saharan_africa = sum(sub_saharan_africa), latin_america_caribbean = sum(latin_america_caribbean),
@@ -684,4 +694,3 @@ ggplot(data = gathered.inc.reg.sum, aes(x = reorder(sub_geo, n),
                               "western_europe" = "Western Europe")) +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
-
