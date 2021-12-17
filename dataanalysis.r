@@ -644,6 +644,9 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
 
 table(incidence.comparison$pop_descript)
 table(incidence.comparison$cohort_descript)
+table(incidence.comparison$subtype_1)
+table(incidence.comparison$sample_type)
+table(incidence.comparison$assay_manufact)
 
 ### Create new df for region that compared LAg and obs incidence
 incidence.comparison.reg <- incidence.comparison %>% 
