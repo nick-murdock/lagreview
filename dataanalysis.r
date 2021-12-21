@@ -1,11 +1,5 @@
 # THIS FILE IS FOR ALL DATA ANALYSIS PORTIONS OF THE COVIDENCE REVIEW
 
-##############################################################################
-# List of analysis and plots to complete           
-# Tables and plots should be grouped by evaluation or field use when appropriate
-# - Other tables and plots you think may be interesting or important     
-##############################################################################
-
 # Load packages
 library(tidyr)
 library(dplyr)
@@ -17,6 +11,7 @@ library(broom)
 # Loading in the data
 
 data <- read.csv("LAg_sys_review_data.csv")
+inc.comp.data <- read.csv("LAg_vs_Obs_incidence_table.csv")
 
 # Viewing the beginning of the data
 head(data)
@@ -627,7 +622,8 @@ ggplot(data = frr.sum.gather, aes(x = frr_threshold,
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
-## LAg studies that compared against traditional HIV incidence measurements
+########################################################################################
+# NEW SECTION: LAg studies that compared against traditional HIV incidence measurements
 table(data.v2$study_purpose)
 incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = study_purpose)) %>%
   filter(!grepl(pattern = "ICAP", x = journal)) %>% 
@@ -642,58 +638,11 @@ incidence.comparison <- data.v2 %>% filter(grepl(pattern = "HIV incidence", x = 
            author_last_name == "Laeyendecker" | 
            author_last_name == "Vermeulen" & year == 2021)
 
-table(incidence.comparison$pop_descript)
-table(incidence.comparison$cohort_descript)
-table(incidence.comparison$subtype_1)
-table(incidence.comparison$sample_type)
-table(incidence.comparison$assay_manufact)
+#### NOTE: incidence comparison file created separately and loaded at beginning of R file
 
-### Create new df for region that compared LAg and obs incidence
-incidence.comparison.reg <- incidence.comparison %>% 
-  select(eval_field, unknown, northern_africa, sub_saharan_africa, latin_america_caribbean,
-         northern_america, central_asia, eastern_asia, south_eastern_asia, southern_asia, western_asia,
-         eastern_europe, northern_europe, southern_europe, western_europe, australia_new_zealand, melanesia,
-         micronesia, polynesia) 
-
-### Count the number of specific region
-incidence.comparison.reg.sum <- incidence.comparison.reg  %>% 
-  summarize(unknown = sum(unknown),northern_africa = sum(northern_africa), 
-            sub_saharan_africa = sum(sub_saharan_africa), latin_america_caribbean = sum(latin_america_caribbean),
-            northern_america = sum(northern_america), central_asia = sum(central_asia), 
-            eastern_asia = sum(eastern_asia), south_eastern_asia = sum(south_eastern_asia), 
-            southern_asia = sum(southern_asia), western_asia = sum(western_asia),
-            eastern_europe = sum(eastern_europe), northern_europe = sum(northern_europe), 
-            southern_europe = sum(southern_europe), western_europe = sum(western_europe),
-            australia_new_zealand = sum(australia_new_zealand), melanesia = sum(melanesia),
-            micronesia = sum(micronesia), polynesia = sum(polynesia))
-
-### Reorganize table and plot
-gathered.inc.reg.sum <- incidence.comparison.reg.sum %>% 
-  gather(key = "sub_geo", value = "n", 1:18)
-
-ggplot(data = gathered.inc.reg.sum, aes(x = reorder(sub_geo, n), 
-                                   y = n)) +
-  geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
-  labs(title = "Number of studies where samples were collected to conduct LAg studies",
-       x = "Sub-Geographic Region", y = "Count (n)") +
-  scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
-  scale_x_discrete(labels = c("australia_new_zealand" = "Australia & New Zealand",
-                              "central_asia" = "Central Asia",
-                              "eastern_asia" = "Eastern Asia",
-                              "eastern_europe" = "Eastern Europe",
-                              "latin_america_caribbean" = "Latin American & Caribbean",
-                              "melanesia" = "Melanesia",
-                              "micronesia" = "Micronesia",
-                              "northern_africa" = "Northern Africa",
-                              "northern_america" = "Northern America",
-                              "northern_europe" = "Northern Europe",
-                              "polynesia" = "Polynesia",
-                              "south_eastern_asia" = "South Eastern Asia",
-                              "southern_asia" = "Southern Asia",
-                              "southern_europe" = "Southern Europe",
-                              "sub_saharan_africa" = "Sub-Saharan Africa",
-                              "unknown" = "Unknown",
-                              "western_asia" = "Western Asia",
-                              "western_europe" = "Western Europe")) +
-  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
-        plot.title = element_text(hjust = 0.5))
+table(inc.comp.data$subgeo_region)
+table(inc.comp.data$pop_descript)
+table(inc.comp.data$cohort_descript)
+table(inc.comp.data$subtype)
+table(inc.comp.data$sample_type)
+table(inc.comp.data$assay_manufact)
