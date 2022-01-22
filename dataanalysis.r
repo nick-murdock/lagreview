@@ -393,8 +393,13 @@ ggplot(data = manufac.table, aes(x = reorder(assay_manufact, n),
   labs(#title = "Number of studies using specific CDC-approved LAg manufacturing kits",
        x = "Assay manufacturer", y = "Count (n)") +
   scale_fill_discrete(name = "Type of Study") +
-  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
-        plot.title = element_text(hjust = 0.5))
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1, size = 6),
+        axis.title.x.bottom = element_text(size = 8),
+        plot.title = element_text(hjust = 0.5),
+        axis.title.y = element_text(size = 8),
+        legend.text = element_text(size = 7),
+        legend.title = element_text(size = 8), 
+        legend.key.size = unit(0.4, "cm"))
 
 ## Sub-geographic region where samples were collected from
 
@@ -457,7 +462,7 @@ ggplot(data = gathered.region, aes(x = reorder(sub_geo, n),
 
 ## Subtype
 
-### Create neew df containing subtype and eval/field use columns
+### Create new df containing subtype and eval/field use columns
 subtype <- data.v2 %>% group_by(eval_field) %>%
   select(eval_field, subtype_1, subtype_2, subtype_3, subtype_4, subtype_5)
 
