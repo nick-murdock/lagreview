@@ -419,13 +419,14 @@ region.sum <- regions %>% group_by(eval_field) %>%
 
 ### Reorganize table and plot
 gathered.region <- region.sum %>% 
-  gather(key = "sub_geo", value = "n", 2:19)
+  gather(key = "sub_geo", value = "n", 2:19) %>%
+  filter(n != 0)
 
 ggplot(data = gathered.region, aes(x = reorder(sub_geo, n), 
                                         y = n, 
                                         fill = eval_field)) +
   geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
-  labs(title = "Number of studies where samples were collected to conduct LAg studies",
+  labs(#title = "Number of studies where samples were collected to conduct LAg studies",
        x = "Sub-Geographic Region", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
   scale_x_discrete(labels = c("australia_new_zealand" = "Australia & New Zealand",
@@ -446,8 +447,13 @@ ggplot(data = gathered.region, aes(x = reorder(sub_geo, n),
                               "unknown" = "Unknown",
                               "western_asia" = "Western Asia",
                               "western_europe" = "Western Europe")) +
-  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
-        plot.title = element_text(hjust = 0.5))
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1, size = 6), 
+        axis.title.x.bottom = element_text(size = 8),
+        plot.title = element_text(hjust = 0.5), 
+        axis.title.y = element_text(size = 8),
+        legend.text = element_text(size = 7),
+        legend.title = element_text(size = 8), 
+        legend.key.size = unit(0.4, "cm"))
 
 ## Subtype
 
