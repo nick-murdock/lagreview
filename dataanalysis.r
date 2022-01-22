@@ -475,23 +475,26 @@ gathered.subtype$subtype <- as.factor(gathered.subtype$subtype)
 
 table(gathered.subtype$subtype)
 
-gathered.subtype.v2 <- gathered.subtype %>% 
-  filter(subtype != "NA")
-
-gathered.subtype.v2 <- gathered.subtype.v2 %>% group_by(eval_field) %>%
+gathered.subtype.v2 <- gathered.subtype %>% group_by(eval_field) %>%
   select(eval_field, subtype)
 
-subtype.table <- as.data.frame(table(gathered.subtype.v2))
+subtype.table <- as.data.frame(table(gathered.subtype.v2)) %>% 
+  filter(subtype != "NA")
 
 ggplot(data = subtype.table, aes(x = reorder(subtype, Freq), 
                                    y = Freq, 
                                    fill = eval_field)) +
   geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +  
-  labs(title = "Number of studies based on HIV-1 subtypes",
+  labs(#title = "Number of studies based on HIV-1 subtypes",
        x = "HIV-1 Subtypes", y = "Count (n)") +
   scale_fill_discrete(name = "Type of study", labels = c("Evaluation", "Field Use")) +
-  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
-        plot.title = element_text(hjust = 0.5))
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1, size = 8), 
+        axis.title.x.bottom = element_text(size = 8),
+        plot.title = element_text(hjust = 0.5), 
+        axis.title.y = element_text(size = 8),
+        legend.text = element_text(size = 8),
+        legend.title = element_text(size = 8), 
+        legend.key.size = unit(0.5, "cm"))
 
 ## MDRI
 
