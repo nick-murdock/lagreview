@@ -390,9 +390,9 @@ ggplot(data = manufac.table, aes(x = reorder(assay_manufact, n),
                                   y = n,
                                   fill = eval_field)) +
   geom_bar(stat = "identity", position = position_dodge2(width = 0.9, preserve = "single"), size = 0) +
-  labs(title = "Number of studies using specific CDC-approved LAg manufacturing kits",
+  labs(#title = "Number of studies using specific CDC-approved LAg manufacturing kits",
        x = "Assay manufacturer", y = "Count (n)") +
-  scale_fill_discrete(name = "Assay manufacturer") +
+  scale_fill_discrete(name = "Type of Study") +
   theme(axis.text.x = element_text(angle=45, vjust=1, hjust=1),
         plot.title = element_text(hjust = 0.5))
 
